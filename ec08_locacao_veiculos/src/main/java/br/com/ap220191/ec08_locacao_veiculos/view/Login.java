@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.ap220191.ec08_locacao_veiculos.util;
+package br.com.ap220191.ec08_locacao_veiculos.view;
 
+import br.com.ap220191.ec08_locacao_veiculos.util.JPassWordFieldHint;
 import java.awt.Color;
 import java.awt.Point;
 import java.util.logging.Level;

@@ -1,4 +1,4 @@
-package br.com.ap220191.ec08_locacao_veiculos.util;
+package br.com.ap220191.ec08_locacao_veiculos.model;
 
 public class Cliente {
 	private String nome;

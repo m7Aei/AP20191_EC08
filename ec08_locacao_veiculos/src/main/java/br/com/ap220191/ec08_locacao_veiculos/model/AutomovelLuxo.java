@@ -1,10 +1,10 @@
-package br.com.ap220191.ec08_locacao_veiculos.util;
+package br.com.ap220191.ec08_locacao_veiculos.model;
 
-public class AutomovelUtilitario extends Automovel {
+public class AutomovelLuxo extends Automovel {
     private double aliquota;
     private char habilitacaoExigida;
 
-    public AutomovelUtilitario(String placa, double valorDiaria, double aliquota, boolean disponibilidade, double aliquota1, char habilitacaoExigida) {
+    public AutomovelLuxo(String placa, double valorDiaria, double aliquota, boolean disponibilidade, double aliquota1, char habilitacaoExigida) {
         super(placa, valorDiaria, aliquota, disponibilidade);
         this.aliquota = aliquota1;
         this.habilitacaoExigida = habilitacaoExigida;

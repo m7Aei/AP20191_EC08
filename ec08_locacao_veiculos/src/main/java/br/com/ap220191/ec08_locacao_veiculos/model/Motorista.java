@@ -1,4 +1,4 @@
-package br.com.ap220191.ec08_locacao_veiculos.util;
+package br.com.ap220191.ec08_locacao_veiculos.model;
 import java.util.List;
 
 public class Motorista {

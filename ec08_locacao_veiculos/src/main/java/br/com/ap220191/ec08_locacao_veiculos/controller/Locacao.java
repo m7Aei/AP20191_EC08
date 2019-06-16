@@ -1,4 +1,4 @@
-package br.com.ap220191.ec08_locacao_veiculos.util;
+package br.com.ap220191.ec08_locacao_veiculos.controller;
 import java.util.Date;
 public class Locacao {
     private Date dataLocacao;
