@@ -1,7 +1,7 @@
 package br.com.ap220191.ec08_locacao_veiculos.model;
 import java.util.Scanner;
 
-public class Automovel {
+abstract public class Automovel {
     private String placa;
     private double valorDiaria, aliquota;
     private boolean disponibilidade;
