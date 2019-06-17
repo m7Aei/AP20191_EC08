@@ -30,37 +30,43 @@ public class MenuAdministrador extends javax.swing.JFrame {
         fotoFundo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastro = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuCliente = new javax.swing.JMenuItem();
+        jMenuMotorista = new javax.swing.JMenuItem();
+        jMenuVeiculo = new javax.swing.JMenuItem();
         jMenuOperacao = new javax.swing.JMenu();
+        jMenuRelatorio = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        fotoFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ap220191/ec08_locacao_veiculos/view/icons/rent-a-car.jpg"))); // NOI18N
+        fotoFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/rent-a-car.jpg"))); // NOI18N
 
         jMenuCadastro.setText("Cadastro");
 
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ap220191/ec08_locacao_veiculos/view/icons/agreement.png"))); // NOI18N
-        jMenuItem1.setText("Cliente");
-        jMenuCadastro.add(jMenuItem1);
+        jMenuCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/agreement.png"))); // NOI18N
+        jMenuCliente.setText("Cliente");
+        jMenuCadastro.add(jMenuCliente);
 
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ap220191/ec08_locacao_veiculos/view/icons/businessman.png"))); // NOI18N
-        jMenuItem2.setText("Motorista");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        jMenuMotorista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/businessman.png"))); // NOI18N
+        jMenuMotorista.setText("Motorista");
+        jMenuMotorista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                jMenuMotoristaActionPerformed(evt);
             }
         });
-        jMenuCadastro.add(jMenuItem2);
+        jMenuCadastro.add(jMenuMotorista);
 
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ap220191/ec08_locacao_veiculos/view/icons/sports-car.png"))); // NOI18N
-        jMenuItem3.setText("Veículo");
-        jMenuCadastro.add(jMenuItem3);
+        jMenuVeiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/sports-car.png"))); // NOI18N
+        jMenuVeiculo.setText("Veículo");
+        jMenuCadastro.add(jMenuVeiculo);
 
         jMenuBar1.add(jMenuCadastro);
 
         jMenuOperacao.setText("Operação");
+
+        jMenuRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/relatorioTrabalho-icon.png"))); // NOI18N
+        jMenuRelatorio.setText("Relatório");
+        jMenuOperacao.add(jMenuRelatorio);
+
         jMenuBar1.add(jMenuOperacao);
 
         setJMenuBar(jMenuBar1);
@@ -81,9 +87,9 @@ public class MenuAdministrador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void jMenuMotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuMotoristaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_jMenuMotoristaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,9 +130,10 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel fotoFundo;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastro;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuCliente;
+    private javax.swing.JMenuItem jMenuMotorista;
     private javax.swing.JMenu jMenuOperacao;
+    private javax.swing.JMenuItem jMenuRelatorio;
+    private javax.swing.JMenuItem jMenuVeiculo;
     // End of variables declaration//GEN-END:variables
 }

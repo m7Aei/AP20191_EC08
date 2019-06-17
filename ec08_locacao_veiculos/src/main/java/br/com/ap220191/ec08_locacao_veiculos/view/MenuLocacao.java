@@ -16,6 +16,7 @@ public class MenuLocacao extends javax.swing.JFrame {
      */
     public MenuLocacao() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -27,23 +28,105 @@ public class MenuLocacao extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jComboBoxMotorista = new javax.swing.JComboBox();
+        prazoLocacao = new javax.swing.JFormattedTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        confirmLocacao = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBoxVeiculo = new javax.swing.JComboBox();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        jComboBoxMotorista.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        jComboBoxMotorista.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Fernando", "Ian", "Thallis", "Isadorinha", "Verônica", "Natalie", "Dhiuly" }));
+        jComboBoxMotorista.setToolTipText("");
+        jComboBoxMotorista.setAlignmentX(0.0F);
+        jComboBoxMotorista.setAlignmentY(0.0F);
+        jComboBoxMotorista.setBorder(null);
+        jComboBoxMotorista.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jComboBoxMotorista.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        jComboBoxMotorista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxMotoristaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBoxMotorista, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, -1, 30));
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        prazoLocacao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        getContentPane().add(prazoLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 110, 30));
 
-        setJMenuBar(jMenuBar1);
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel6.setText("Escolha seu motorista:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel5.setText("Escolha até quando será locado:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel3.setText("Escolha seu veículo:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+
+        confirmLocacao.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        confirmLocacao.setText("Confirmar Veículo");
+        getContentPane().add(confirmLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Locação do veículo");
+        jLabel4.setToolTipText("");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3, 510, 100));
+
+        jComboBoxVeiculo.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        jComboBoxVeiculo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Gol\t", "Camaro", "Moto\t", "Caminhão" }));
+        jComboBoxVeiculo.setToolTipText("");
+        jComboBoxVeiculo.setAlignmentX(0.0F);
+        jComboBoxVeiculo.setAlignmentY(0.0F);
+        jComboBoxVeiculo.setBorder(null);
+        jComboBoxVeiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jComboBoxVeiculo.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        jComboBoxVeiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxVeiculoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBoxVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, 30));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/car-keys.jpg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-130, 100, 640, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jComboBoxVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxVeiculoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxVeiculoActionPerformed
+
+    private void jComboBoxMotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxMotoristaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxMotoristaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -84,8 +167,15 @@ public class MenuLocacao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JButton confirmLocacao;
+    private javax.swing.JComboBox jComboBoxMotorista;
+    private javax.swing.JComboBox jComboBoxVeiculo;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JFormattedTextField prazoLocacao;
     // End of variables declaration//GEN-END:variables
 }
