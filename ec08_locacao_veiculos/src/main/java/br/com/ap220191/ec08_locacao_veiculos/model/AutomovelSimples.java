@@ -4,8 +4,8 @@ public class AutomovelSimples extends Automovel{
     private double aliquota;
     private char habilitacaoExigida;
 
-    public AutomovelSimples(String placa, double valorDiaria, double aliquota, boolean disponibilidade, double aliquota1, char habilitacaoExigida) {
-        super(placa, valorDiaria, aliquota, disponibilidade);
+    public AutomovelSimples(String placa, double valorDiaria, double aliquota, boolean disponibilidade, double aliquota1, char habilitacaoExigida, double valorQuilometragem) {
+        super(placa, valorDiaria, aliquota, disponibilidade, valorQuilometragem);
         this.aliquota = aliquota1;
         this.habilitacaoExigida = habilitacaoExigida;
     }

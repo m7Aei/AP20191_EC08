@@ -12,11 +12,6 @@ public class Locacao {
     public void realizarLocacao(String placa, Date dataLocacao){
         
     }
-    public double calcularValor(Date dataLocacao, Date dataDevolucao){
-        return 00.1;
-    }
-    
-    
     
     
 }

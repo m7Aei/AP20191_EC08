@@ -4,8 +4,8 @@ public class AutomovelLuxo extends Automovel {
     private double aliquota;
     private char habilitacaoExigida;
 
-    public AutomovelLuxo(String placa, double valorDiaria, double aliquota, boolean disponibilidade, double aliquota1, char habilitacaoExigida) {
-        super(placa, valorDiaria, aliquota, disponibilidade);
+    public AutomovelLuxo(String placa, double valorDiaria, double aliquota, boolean disponibilidade, double aliquota1, char habilitacaoExigida, double valorQuilometragem) {
+        super(placa, valorDiaria, aliquota, disponibilidade, valorQuilometragem);
         this.aliquota = aliquota1;
         this.habilitacaoExigida = habilitacaoExigida;
     }
