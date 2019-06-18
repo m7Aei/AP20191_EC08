@@ -5,6 +5,8 @@
  */
 package br.com.ap220191.ec08_locacao_veiculos.view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author gattc
@@ -29,7 +31,7 @@ public class MenuLocacao extends javax.swing.JFrame {
     private void initComponents() {
 
         jComboBoxMotorista = new javax.swing.JComboBox();
-        prazoLocacao = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldPrazoLocacao = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -57,8 +59,12 @@ public class MenuLocacao extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBoxMotorista, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, -1, 30));
 
-        prazoLocacao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        getContentPane().add(prazoLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 110, 30));
+        try {
+            jFormattedTextFieldPrazoLocacao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        getContentPane().add(jFormattedTextFieldPrazoLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 110, 30));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel6.setText("Escolha seu motorista:");
@@ -73,7 +79,12 @@ public class MenuLocacao extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         confirmLocacao.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        confirmLocacao.setText("Confirmar Veículo");
+        confirmLocacao.setText("Confirmar locação");
+        confirmLocacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmLocacaoActionPerformed(evt);
+            }
+        });
         getContentPane().add(confirmLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -128,6 +139,13 @@ public class MenuLocacao extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxMotoristaActionPerformed
 
+    private void confirmLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmLocacaoActionPerformed
+
+        String dataString;
+        dataString = jFormattedTextFieldPrazoLocacao.getText().replace("/", "");
+        JOptionPane.showMessageDialog(null, dataString );
+    }//GEN-LAST:event_confirmLocacaoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -170,12 +188,12 @@ public class MenuLocacao extends javax.swing.JFrame {
     private javax.swing.JButton confirmLocacao;
     private javax.swing.JComboBox jComboBoxMotorista;
     private javax.swing.JComboBox jComboBoxVeiculo;
+    private javax.swing.JFormattedTextField jFormattedTextFieldPrazoLocacao;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JFormattedTextField prazoLocacao;
     // End of variables declaration//GEN-END:variables
 }
