@@ -1,7 +1,10 @@
 package br.com.ap220191.ec08_locacao_veiculos.model;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 abstract public class Automovel {
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -108,14 +111,25 @@ abstract public class Automovel {
 
     }
     
-    public double calcularValor(Date dataLocacao, Date dataDevolucao, double quilometragemInicial, double quilometragemFinal){
+    public double calcularValor(String dataLocacao, String dataDevolucao, double quilometragemInicial, double quilometragemFinal){
         int dias,meses, anos;
-        int dl = Integer.parseInt(dia.format(dataLocacao));
-        int dd = Integer.parseInt(dia.format(dataDevolucao));
-        int ml = Integer.parseInt(mes.format(dataLocacao));
-        int md = Integer.parseInt(mes.format(dataDevolucao));
-        int al = Integer.parseInt(ano.format(dataLocacao));
-        int ad = Integer.parseInt(ano.format(dataDevolucao));
+        Date data1 = null, data2 = null;
+        try {
+             data1 = sdf.parse(getDataLocacao());
+        } catch (ParseException ex) {
+            Logger.getLogger(Automovel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+             data2 = sdf.parse(getDataDevolucao());
+        } catch (ParseException ex) {
+            Logger.getLogger(Automovel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        int dl = Integer.parseInt(dia.format(data1));
+        int dd = Integer.parseInt(dia.format(data2));
+        int ml = Integer.parseInt(mes.format(data1));
+        int md = Integer.parseInt(mes.format(data2));
+        int al = Integer.parseInt(ano.format(data1));
+        int ad = Integer.parseInt(ano.format(data2));
         if(dd >= dl){
             dias = dd - dl;
         }else{
