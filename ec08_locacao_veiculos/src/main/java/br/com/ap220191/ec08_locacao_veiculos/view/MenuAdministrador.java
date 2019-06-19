@@ -28,6 +28,17 @@ public class MenuAdministrador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jInternalFrameAdministrador = new javax.swing.JInternalFrame();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jButtonAbrirMenuRelatorio = new javax.swing.JButton();
+        jButtonAbrirMenuCadastrarVeiculo = new javax.swing.JButton();
+        jButtonAbrirMenuCadastrarMotorista2 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jButtonAbrirMenuCadastrarCliente1 = new javax.swing.JButton();
         fotoFundo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastro = new javax.swing.JMenu();
@@ -38,13 +49,100 @@ public class MenuAdministrador extends javax.swing.JFrame {
         jMenuRelatorio = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jInternalFrameAdministrador.setBackground(new java.awt.Color(255, 255, 255));
+        jInternalFrameAdministrador.setTitle("Bem-Vindo\n");
+        jInternalFrameAdministrador.setVisible(true);
+        jInternalFrameAdministrador.getContentPane().setLayout(null);
+
+        jPanel1.setBackground(new java.awt.Color(27, 187, 125));
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Sistema de gerenciamento");
+        jLabel2.setToolTipText("");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 871, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 9, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+
+        jInternalFrameAdministrador.getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 880, 70);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel3.setText("Relatório -");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+
+        jButtonAbrirMenuRelatorio.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonAbrirMenuRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/business_table_order_report_history_2332.png"))); // NOI18N
+        jPanel2.add(jButtonAbrirMenuRelatorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 140, 130));
+
+        jButtonAbrirMenuCadastrarVeiculo.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonAbrirMenuCadastrarVeiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ExecutiveCar_Black_icon-icons.com_54904.png"))); // NOI18N
+        jButtonAbrirMenuCadastrarVeiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAbrirMenuCadastrarVeiculoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButtonAbrirMenuCadastrarVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, 140, 130));
+
+        jButtonAbrirMenuCadastrarMotorista2.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonAbrirMenuCadastrarMotorista2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/manager_person_man_people_2841.png"))); // NOI18N
+        jButtonAbrirMenuCadastrarMotorista2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAbrirMenuCadastrarMotorista2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButtonAbrirMenuCadastrarMotorista2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 140, 130));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ilustracao-de-engrenagem-doodle-icone_53876-5596.jpg"))); // NOI18N
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 560, 430));
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel4.setText("Cadastros -");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jButtonAbrirMenuCadastrarCliente1.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonAbrirMenuCadastrarCliente1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/business_application_addmale_useradd_insert_add_user_client_2312 (1).png"))); // NOI18N
+        jButtonAbrirMenuCadastrarCliente1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAbrirMenuCadastrarCliente1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButtonAbrirMenuCadastrarCliente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 140, 130));
+
+        jInternalFrameAdministrador.getContentPane().add(jPanel2);
+        jPanel2.setBounds(0, 70, 860, 400);
+
+        getContentPane().add(jInternalFrameAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 890, 500));
 
         fotoFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/rent-a-car.jpg"))); // NOI18N
+        getContentPane().add(fotoFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 924, 581));
 
         jMenuCadastro.setText("Cadastro");
 
         jMenuCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/agreement.png"))); // NOI18N
         jMenuCliente.setText("Cliente");
+        jMenuCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuClienteActionPerformed(evt);
+            }
+        });
         jMenuCadastro.add(jMenuCliente);
 
         jMenuMotorista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/businessman.png"))); // NOI18N
@@ -58,6 +156,11 @@ public class MenuAdministrador extends javax.swing.JFrame {
 
         jMenuVeiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/sports-car.png"))); // NOI18N
         jMenuVeiculo.setText("Veículo");
+        jMenuVeiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuVeiculoActionPerformed(evt);
+            }
+        });
         jMenuCadastro.add(jMenuVeiculo);
 
         jMenuBar1.add(jMenuCadastro);
@@ -72,25 +175,33 @@ public class MenuAdministrador extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(fotoFundo, javax.swing.GroupLayout.PREFERRED_SIZE, 924, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fotoFundo, javax.swing.GroupLayout.PREFERRED_SIZE, 581, Short.MAX_VALUE)
-        );
-
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuMotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuMotoristaActionPerformed
-        // TODO add your handling code here:
+        new MenuCadastroMotoristas().setVisible(true);
     }//GEN-LAST:event_jMenuMotoristaActionPerformed
+
+    private void jButtonAbrirMenuCadastrarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirMenuCadastrarCliente1ActionPerformed
+        new MenuCadastroCliente().setVisible(true);
+    }//GEN-LAST:event_jButtonAbrirMenuCadastrarCliente1ActionPerformed
+
+    private void jMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuClienteActionPerformed
+        new MenuCadastroCliente().setVisible(true);
+    }//GEN-LAST:event_jMenuClienteActionPerformed
+
+    private void jMenuVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuVeiculoActionPerformed
+         new MenuCadastroVeiculos().setVisible(true);
+    }//GEN-LAST:event_jMenuVeiculoActionPerformed
+
+    private void jButtonAbrirMenuCadastrarMotorista2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirMenuCadastrarMotorista2ActionPerformed
+        new MenuCadastroMotoristas().setVisible(true);
+    }//GEN-LAST:event_jButtonAbrirMenuCadastrarMotorista2ActionPerformed
+
+    private void jButtonAbrirMenuCadastrarVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirMenuCadastrarVeiculoActionPerformed
+        new MenuCadastroVeiculos().setVisible(true);
+    }//GEN-LAST:event_jButtonAbrirMenuCadastrarVeiculoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,6 +240,15 @@ public class MenuAdministrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel fotoFundo;
+    private javax.swing.JButton jButtonAbrirMenuCadastrarCliente1;
+    private javax.swing.JButton jButtonAbrirMenuCadastrarMotorista2;
+    private javax.swing.JButton jButtonAbrirMenuCadastrarVeiculo;
+    private javax.swing.JButton jButtonAbrirMenuRelatorio;
+    private javax.swing.JInternalFrame jInternalFrameAdministrador;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastro;
     private javax.swing.JMenuItem jMenuCliente;
@@ -136,5 +256,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuOperacao;
     private javax.swing.JMenuItem jMenuRelatorio;
     private javax.swing.JMenuItem jMenuVeiculo;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

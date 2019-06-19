@@ -30,16 +30,21 @@ public class MenuPagamento extends javax.swing.JFrame {
 
         jComboBoxParcela = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
-        jLabelPagamento = new javax.swing.JLabel();
         jFormattedTextFieldCpf = new javax.swing.JFormattedTextField();
         jComboBoxFormaPagamento = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         confirmarPagamento = new javax.swing.JButton();
-        pagamentoFundo = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Pagamento");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jComboBoxParcela.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -55,25 +60,18 @@ public class MenuPagamento extends javax.swing.JFrame {
                 jComboBoxParcelaActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxParcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, -1, 30));
+        getContentPane().add(jComboBoxParcela, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, 30));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setText("Escolha número de parcelas:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
-
-        jLabelPagamento.setBackground(new java.awt.Color(0, 0, 0));
-        jLabelPagamento.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
-        jLabelPagamento.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelPagamento.setText("Pagamento");
-        jLabelPagamento.setToolTipText("");
-        getContentPane().add(jLabelPagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
         try {
             jFormattedTextFieldCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        getContentPane().add(jFormattedTextFieldCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 110, 30));
+        getContentPane().add(jFormattedTextFieldCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 110, 30));
 
         jComboBoxFormaPagamento.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jComboBoxFormaPagamento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dinheiro", "Cartão de crédito", "Cartão de débito", "Cheque", " " }));
@@ -88,24 +86,64 @@ public class MenuPagamento extends javax.swing.JFrame {
                 jComboBoxFormaPagamentoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxFormaPagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, -1, 30));
+        getContentPane().add(jComboBoxFormaPagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, -1, 30));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("Digite seu cpf:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Escolha a forma de pagamento:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(27, 187, 125));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Pagamento");
+        jLabel1.setToolTipText("");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, -1));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/btg-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95749.png"))); // NOI18N
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, -1, 100));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/shoppaymentorderbuy-23_icon-icons.com_73884.png"))); // NOI18N
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, -1, 100));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/businesspaymentcard_paymentcard_visa_negocio_pag_2339.png"))); // NOI18N
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, -1, 70));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/paypal-inverted_82042.png"))); // NOI18N
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, 70));
 
         confirmarPagamento.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         confirmarPagamento.setText("Confirmar Pagamento");
-        getContentPane().add(confirmarPagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, -1, -1));
+        jPanel2.add(confirmarPagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, -1));
 
-        pagamentoFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/pagamento.jpg"))); // NOI18N
-        getContentPane().add(pagamentoFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 410));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Mastercard_icon-icons.com_60554 (1).png"))); // NOI18N
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, 70));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 640, 310));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBoxFormaPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxFormaPagamentoActionPerformed
@@ -156,10 +194,16 @@ public class MenuPagamento extends javax.swing.JFrame {
     private javax.swing.JComboBox jComboBoxFormaPagamento;
     private javax.swing.JComboBox jComboBoxParcela;
     private javax.swing.JFormattedTextField jFormattedTextFieldCpf;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabelPagamento;
-    private javax.swing.JLabel pagamentoFundo;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

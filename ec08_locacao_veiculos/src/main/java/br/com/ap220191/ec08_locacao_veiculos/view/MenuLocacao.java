@@ -35,13 +35,17 @@ public class MenuLocacao extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        confirmLocacao = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jComboBoxVeiculo = new javax.swing.JComboBox();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        confirmLocacao = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jComboBoxMotorista.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -78,38 +82,6 @@ public class MenuLocacao extends javax.swing.JFrame {
         jLabel3.setText("Escolha seu veículo:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
-        confirmLocacao.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        confirmLocacao.setText("Confirmar locação");
-        confirmLocacao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmLocacaoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(confirmLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Locação do veículo");
-        jLabel4.setToolTipText("");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3, 510, 100));
-
         jComboBoxVeiculo.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jComboBoxVeiculo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Gol\t", "Camaro", "Moto\t", "Caminhão" }));
         jComboBoxVeiculo.setToolTipText("");
@@ -125,10 +97,83 @@ public class MenuLocacao extends javax.swing.JFrame {
         });
         getContentPane().add(jComboBoxVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/car-keys.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-130, 100, 640, 420));
+        jPanel1.setBackground(new java.awt.Color(27, 187, 125));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Locação");
+        jLabel1.setToolTipText("");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, -1));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        confirmLocacao.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        confirmLocacao.setText("Confirmar locação");
+        confirmLocacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmLocacaoActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Cabriolet_Red_icon-icons.com_54906.png"))); // NOI18N
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Car_Grey_icon-icons.com_54905.png"))); // NOI18N
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/TowTruck_Yellow_icon-icons.com_54896.png"))); // NOI18N
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/TouringMotorcycle_Green_icon-icons.com_54907.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(confirmLocacao)
+                .addGap(178, 178, 178))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel7)
+                .addGap(34, 34, 34)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(244, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
+                .addComponent(confirmLocacao)
+                .addGap(47, 47, 47))
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 510, 430));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBoxVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxVeiculoActionPerformed
@@ -140,10 +185,11 @@ public class MenuLocacao extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxMotoristaActionPerformed
 
     private void confirmLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmLocacaoActionPerformed
-
-        String dataString;
-        dataString = jFormattedTextFieldPrazoLocacao.getText().replace("/", "");
-        JOptionPane.showMessageDialog(null, dataString );
+        new MenuPagamento().setVisible(true);
+        
+        //String dataString;
+        //dataString = jFormattedTextFieldPrazoLocacao.getText().replace("/", "");
+        //JOptionPane.showMessageDialog(null, dataString );
     }//GEN-LAST:event_confirmLocacaoActionPerformed
 
     /**
@@ -189,11 +235,15 @@ public class MenuLocacao extends javax.swing.JFrame {
     private javax.swing.JComboBox jComboBoxMotorista;
     private javax.swing.JComboBox jComboBoxVeiculo;
     private javax.swing.JFormattedTextField jFormattedTextFieldPrazoLocacao;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

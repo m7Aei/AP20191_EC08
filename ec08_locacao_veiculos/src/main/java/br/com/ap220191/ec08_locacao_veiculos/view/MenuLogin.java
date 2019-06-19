@@ -299,21 +299,4 @@ public class MenuLogin extends javax.swing.JFrame {
     private javax.swing.JTextField nomeUsuario;
     private javax.swing.JTextField senhaUsuario;
     // End of variables declaration//GEN-END:variables
-
-    public JTextField getNomeUsuario() {
-        return nomeUsuario;
-    }
-
-    public void setNomeUsuario(JTextField nomeUsuario) {
-        this.nomeUsuario = nomeUsuario;
-    }
-
-    public JTextField getSenhaUsuario() {
-        return senhaUsuario;
-    }
-
-    public void setSenhaUsuario(JTextField senhaUsuario) {
-        this.senhaUsuario = senhaUsuario;
-    }
-
 }

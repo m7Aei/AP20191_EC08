@@ -28,36 +28,65 @@ public class MenuCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButtonConsultarLocacao = new javax.swing.JButton();
         jButtonRealizarLocacao = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        clienteFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel2.setBackground(new java.awt.Color(27, 187, 125));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Bem-Vindo");
+        jLabel1.setToolTipText("");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, -1));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(27, 187, 125));
         jLabel2.setText("Escolha uma opção:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
         jButtonConsultarLocacao.setText("Consultar locações");
-        getContentPane().add(jButtonConsultarLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 140, -1));
+        jPanel1.add(jButtonConsultarLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, -1));
 
         jButtonRealizarLocacao.setText("Realizar locação");
-        getContentPane().add(jButtonRealizarLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 140, -1));
+        jButtonRealizarLocacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRealizarLocacaoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonRealizarLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 140, -1));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(27, 187, 125));
-        jLabel1.setText("Bem vindo !");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
-
-        clienteFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/cliente.png"))); // NOI18N
-        getContentPane().add(clienteFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 250));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonRealizarLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRealizarLocacaoActionPerformed
+        new MenuLocacao().setVisible(true);
+    }//GEN-LAST:event_jButtonRealizarLocacaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,10 +124,11 @@ public class MenuCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel clienteFundo;
     private javax.swing.JButton jButtonConsultarLocacao;
     private javax.swing.JButton jButtonRealizarLocacao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
