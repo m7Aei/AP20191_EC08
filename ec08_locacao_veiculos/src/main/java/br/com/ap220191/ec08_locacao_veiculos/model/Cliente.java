@@ -2,9 +2,16 @@ package br.com.ap220191.ec08_locacao_veiculos.model;
 
 public class Cliente {
 	private String nome;
+        private String usuario;
+        private String senha;
 	private String cpf;
 	private boolean inadimplencia;
 	private boolean serasa;
+        
+        public void Cliente(String usuario, String senha){
+            this.usuario = usuario;
+            this.senha = senha;
+        }
 
 	public Cliente(String nome, String cpf) {
 		super();
@@ -35,6 +42,23 @@ public class Cliente {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+        
 
 	public boolean isInadimplencia() {
 		return inadimplencia;
