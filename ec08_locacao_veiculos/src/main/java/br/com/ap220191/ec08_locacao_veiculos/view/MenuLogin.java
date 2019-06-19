@@ -238,6 +238,7 @@ public class MenuLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_formMouseDragged
 
     private void BtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEntrarActionPerformed
+        
         Point p = this.getLocation();
         MenuLogin login = this;
         new Thread() {
@@ -254,6 +255,15 @@ public class MenuLogin extends javax.swing.JFrame {
                 }
             }
         }.start();
+        if (nomeUsuario.getText().equals("admin") && senhaUsuario.getText().equals("1234")){
+            new MenuAdministrador().setVisible(true); 
+            login.dispose();
+            
+        } else if (nomeUsuario.getText().equals("cliente") && senhaUsuario.getText().equals("12345")){
+            new MenuCliente().setVisible(true); 
+            login.dispose();
+        }
+        
     }//GEN-LAST:event_BtnEntrarActionPerformed
 
     /**
