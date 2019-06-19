@@ -46,7 +46,7 @@ public class Motorista {
     }
 
     public void cadastrarMotorista(){
-
+        
     }
 
     public void removerMotorista(){
@@ -58,10 +58,6 @@ public class Motorista {
     }
 
     public char verificarHabilitacao(){
-
-    }
-
-    public List gerarPrioridade(){
-
+        return ' ';
     }
 }

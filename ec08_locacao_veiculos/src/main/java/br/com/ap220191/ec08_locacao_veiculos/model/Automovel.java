@@ -111,8 +111,8 @@ abstract public class Automovel {
 
     }
     
-    public double calcularValor(String dataLocacao, String dataDevolucao, double quilometragemInicial, double quilometragemFinal){
-        int dias,meses, anos;
+    public double calcularValor(){
+        int dias, meses, anos;
         Date data1 = null, data2 = null;
         try {
              data1 = sdf.parse(getDataLocacao());

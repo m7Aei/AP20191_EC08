@@ -37,8 +37,7 @@ public class Main {
         } catch (ParseException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String o = sdf.format(a);
-        System.out.println(c);
+        String o = dia.format(a);
         System.out.println(o);
     }
 }

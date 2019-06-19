@@ -27,4 +27,8 @@ public class AutomovelLuxo extends Automovel {
     public void setHabilitacaoExigida(char habilitacaoExigida) {
         this.habilitacaoExigida = habilitacaoExigida;
     }
+        @Override
+    public double calcularValor(){
+        return (super.calcularValor() + super.calcularValor()*getAliquota()); 
+    }
 }

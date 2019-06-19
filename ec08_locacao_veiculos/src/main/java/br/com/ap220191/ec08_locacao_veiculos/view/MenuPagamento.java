@@ -39,6 +39,7 @@ public class MenuPagamento extends javax.swing.JFrame {
         pagamentoFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Pagamento");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jComboBoxParcela.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
