@@ -99,7 +99,8 @@ abstract public class Automovel {
         this.disponibilidade = disponibilidade;
     }
 
-    public void cadastrarAutomovel(){
+    public void cadastrarAutomovel(String placa){
+        setPlaca(this.placa);
 
     }
 

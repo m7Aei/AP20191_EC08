@@ -45,8 +45,11 @@ public class Motorista {
         this.tempoEmpresa = tempoEmpresa;
     }
 
-    public void cadastrarMotorista(){
-        
+    public void cadastrarMotorista(String nome, String matricula, char habilitacao, int tempoEmpresa){
+        setNome(this.nome);
+        setMatricula(this.matricula);
+        setHabilitacao(this.habilitacao);
+        setTempoEmpresa(this.tempoEmpresa);
     }
 
     public void removerMotorista(){
