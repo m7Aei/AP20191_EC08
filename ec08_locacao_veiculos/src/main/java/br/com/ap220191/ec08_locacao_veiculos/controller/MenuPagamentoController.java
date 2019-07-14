@@ -5,10 +5,20 @@
  */
 package br.com.ap220191.ec08_locacao_veiculos.controller;
 
+import br.com.ap220191.ec08_locacao_veiculos.view.MenuPagamento;
+
 /**
  *
  * @author T-Gamer
  */
 public class MenuPagamentoController {
+    
+    private MenuPagamento view;
+
+    public MenuPagamentoController(MenuPagamento view) {
+        this.view = view;
+    }
+    
+    
     
 }

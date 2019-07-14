@@ -30,12 +30,6 @@ public class MenuLocacao extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBoxMotorista = new javax.swing.JComboBox();
-        jFormattedTextFieldPrazoLocacao = new javax.swing.JFormattedTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jComboBoxVeiculo = new javax.swing.JComboBox();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -44,58 +38,18 @@ public class MenuLocacao extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jComboBoxMotorista = new javax.swing.JComboBox();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jFormattedTextFieldPrazoLocacao = new javax.swing.JFormattedTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jComboBoxVeiculo = new javax.swing.JComboBox();
+        jLabel10 = new javax.swing.JLabel();
+        jFormattedTextFieldCpfLocacao = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldCpf = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jComboBoxMotorista.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jComboBoxMotorista.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Fernando", "Ian", "Thallis", "Isadorinha", "Verônica", "Natalie", "Dhiuly" }));
-        jComboBoxMotorista.setToolTipText("");
-        jComboBoxMotorista.setAlignmentX(0.0F);
-        jComboBoxMotorista.setAlignmentY(0.0F);
-        jComboBoxMotorista.setBorder(null);
-        jComboBoxMotorista.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jComboBoxMotorista.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        jComboBoxMotorista.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxMotoristaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComboBoxMotorista, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, -1, 30));
-
-        try {
-            jFormattedTextFieldPrazoLocacao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        getContentPane().add(jFormattedTextFieldPrazoLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 110, 30));
-
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel6.setText("Escolha seu motorista:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel5.setText("Escolha até quando será locado:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel3.setText("Escolha seu veículo:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
-
-        jComboBoxVeiculo.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jComboBoxVeiculo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Gol\t", "Camaro", "Moto\t", "Caminhão" }));
-        jComboBoxVeiculo.setToolTipText("");
-        jComboBoxVeiculo.setAlignmentX(0.0F);
-        jComboBoxVeiculo.setAlignmentY(0.0F);
-        jComboBoxVeiculo.setBorder(null);
-        jComboBoxVeiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jComboBoxVeiculo.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        jComboBoxVeiculo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxVeiculoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComboBoxVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, 30));
 
         jPanel1.setBackground(new java.awt.Color(27, 187, 125));
 
@@ -137,6 +91,58 @@ public class MenuLocacao extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/TouringMotorcycle_Green_icon-icons.com_54907.png"))); // NOI18N
 
+        jComboBoxMotorista.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        jComboBoxMotorista.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Fernando", "Ian", "Thallis", "Isadorinha", "Verônica", "Natalie", "Dhiuly" }));
+        jComboBoxMotorista.setToolTipText("");
+        jComboBoxMotorista.setAlignmentX(0.0F);
+        jComboBoxMotorista.setAlignmentY(0.0F);
+        jComboBoxMotorista.setBorder(null);
+        jComboBoxMotorista.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jComboBoxMotorista.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        jComboBoxMotorista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxMotoristaActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel6.setText("Escolha seu motorista:");
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel5.setText("Escolha até quando será locado:");
+
+        try {
+            jFormattedTextFieldPrazoLocacao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel3.setText("Escolha seu veículo:");
+
+        jComboBoxVeiculo.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        jComboBoxVeiculo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Gol\t", "Camaro", "Moto\t", "Caminhão" }));
+        jComboBoxVeiculo.setToolTipText("");
+        jComboBoxVeiculo.setAlignmentX(0.0F);
+        jComboBoxVeiculo.setAlignmentY(0.0F);
+        jComboBoxVeiculo.setBorder(null);
+        jComboBoxVeiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jComboBoxVeiculo.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        jComboBoxVeiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxVeiculoActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel10.setText("Digite seu cpf:");
+
+        try {
+            jFormattedTextFieldCpfLocacao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -146,31 +152,86 @@ public class MenuLocacao extends javax.swing.JFrame {
                 .addComponent(confirmLocacao)
                 .addGap(178, 178, 178))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(28, 28, 28)
-                .addComponent(jLabel7)
-                .addGap(34, 34, 34)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel7)
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(11, 11, 11)
+                                .addComponent(jFormattedTextFieldPrazoLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(5, 5, 5)
+                                .addComponent(jComboBoxMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jFormattedTextFieldCpfLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(5, 5, 5)
+                                .addComponent(jComboBoxVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(244, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel9))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel10)
+                            .addComponent(jFormattedTextFieldCpfLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jFormattedTextFieldPrazoLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel5)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel3))
+                            .addComponent(jComboBoxVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel6))
+                            .addComponent(jComboBoxMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(79, 79, 79)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addGap(18, 18, 18)
                 .addComponent(confirmLocacao)
                 .addGap(47, 47, 47))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 510, 430));
+
+        try {
+            jFormattedTextFieldCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        getContentPane().add(jFormattedTextFieldCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -186,10 +247,8 @@ public class MenuLocacao extends javax.swing.JFrame {
 
     private void confirmLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmLocacaoActionPerformed
         new MenuPagamento().setVisible(true);
+
         
-        //String dataString;
-        //dataString = jFormattedTextFieldPrazoLocacao.getText().replace("/", "");
-        //JOptionPane.showMessageDialog(null, dataString );
     }//GEN-LAST:event_confirmLocacaoActionPerformed
 
     /**
@@ -234,8 +293,11 @@ public class MenuLocacao extends javax.swing.JFrame {
     private javax.swing.JButton confirmLocacao;
     private javax.swing.JComboBox jComboBoxMotorista;
     private javax.swing.JComboBox jComboBoxVeiculo;
+    private javax.swing.JFormattedTextField jFormattedTextFieldCpf;
+    private javax.swing.JFormattedTextField jFormattedTextFieldCpfLocacao;
     private javax.swing.JFormattedTextField jFormattedTextFieldPrazoLocacao;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;

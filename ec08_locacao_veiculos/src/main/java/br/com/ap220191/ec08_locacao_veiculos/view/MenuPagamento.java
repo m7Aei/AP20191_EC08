@@ -135,6 +135,11 @@ public class MenuPagamento extends javax.swing.JFrame {
 
         confirmarPagamento.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         confirmarPagamento.setText("Confirmar Pagamento");
+        confirmarPagamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmarPagamentoActionPerformed(evt);
+            }
+        });
         jPanel2.add(confirmarPagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Mastercard_icon-icons.com_60554 (1).png"))); // NOI18N
@@ -153,6 +158,10 @@ public class MenuPagamento extends javax.swing.JFrame {
     private void jComboBoxParcelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxParcelaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxParcelaActionPerformed
+
+    private void confirmarPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarPagamentoActionPerformed
+        
+    }//GEN-LAST:event_confirmarPagamentoActionPerformed
 
     /**
      * @param args the command line arguments

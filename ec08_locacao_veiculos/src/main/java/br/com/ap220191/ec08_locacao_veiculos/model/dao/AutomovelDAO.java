@@ -5,6 +5,7 @@
  */
 package br.com.ap220191.ec08_locacao_veiculos.model.dao;
 
+import br.com.ap220191.ec08_locacao_veiculos.model.Automovel;
 import br.com.ap220191.ec08_locacao_veiculos.model.Motorista;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,19 +17,22 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class MotoristaDAO {
-    
+/**
+ *
+ * @author gattc
+ */
+public class AutomovelDAO {
     private final Connection connection;
 
-    public MotoristaDAO(Connection connection) {
+    public AutomovelDAO(Connection connection) {
         this.connection = connection;
     }
 
  
-    public void insert(Motorista motorista) throws SQLException {
+    public void insert(Automovel automovel) throws SQLException {
 
         try{     
-        String sql = "insert into motorista (nome, matricula, tempoempresa, habilitacao) values ('"+motorista.getNome()+"','"+motorista.getMatricula()+"','"+motorista.getTempoEmpresa()+"', '"+motorista.getHabilitacao()+"')";
+        String sql = "insert into veiculos (placa,disponibilidade,tipo) values ('"+automovel.getPlaca()+"',true ,'"+automovel.getTipo()+"')";
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.execute();
         
@@ -41,12 +45,6 @@ public class MotoristaDAO {
 
 
 
-    public boolean procurarMotorista(Motorista motorista) throws SQLException {
-        String sql = "select * from motorista where matricula = '"+motorista.getMatricula()+"' and nome = '"+motorista.getNome()+"' ";
-        PreparedStatement statement = connection.prepareStatement(sql);
-        statement.execute();
-        ResultSet resulSet = statement.getResultSet();    
-        return resulSet.next();      
-    }
+
     
 }

@@ -5,11 +5,9 @@
  */
 package br.com.ap220191.ec08_locacao_veiculos.model;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 /**
  *
@@ -17,27 +15,29 @@ import java.util.logging.Logger;
  */
 public class Main {
     public static void main(String[] args) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        SimpleDateFormat dia = new SimpleDateFormat("dd");
-        SimpleDateFormat mes = new SimpleDateFormat("MM");
-        SimpleDateFormat ano = new SimpleDateFormat("yyyy");
-        String d = "21/05/2015";
-           Date c = null;
-           Date a = null;
-        try {
-            c = sdf.parse(d);
-            
-        } catch (ParseException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            a = sdf.parse(d);
-            
-            
-        } catch (ParseException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        String o = dia.format(a);
-        System.out.println(o);
+        Pagamento pagamento = new Pagamento();
+        pagamento.setValor((float) 22.50);
+        pagamento.setParcelamento(3);
+
+        final SessionFactory sessionFactory = buildSessionFactory();
+
+        final Session session = sessionFactory.openSession();
+        session.save(pagamento);
+        Pagamento pagamento1 = session.get(Pagamento.class, 1);
+
+        System.out.println("Pagamento1, valor: " + pagamento1.getValor() + "\n parcelamento: " + pagamento1.getParcelamento());
+        session.close();
+        sessionFactory.close();
+
+    }
+
+    private static SessionFactory buildSessionFactory(){
+
+        return new Configuration()
+                .configure()
+                .buildSessionFactory();
     }
 }
+
+
+

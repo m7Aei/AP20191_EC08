@@ -5,17 +5,20 @@
  */
 package br.com.ap220191.ec08_locacao_veiculos.view;
 
+import br.com.ap220191.ec08_locacao_veiculos.controller.MenuAdministradorController;
+
 /**
  *
  * @author gattc
  */
 public class MenuAdministrador extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuAdministrador
-     */
+    private final MenuAdministradorController controller;
+
+    
     public MenuAdministrador() {
         initComponents();
+        controller = new MenuAdministradorController(this);
         setLocationRelativeTo(null);
     }
 
@@ -33,12 +36,14 @@ public class MenuAdministrador extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jButtonAbrirMenuRelatorio = new javax.swing.JButton();
+        jButtonAbrirMenuLocacoes = new javax.swing.JButton();
         jButtonAbrirMenuCadastrarVeiculo = new javax.swing.JButton();
         jButtonAbrirMenuCadastrarMotorista2 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButtonAbrirMenuCadastrarCliente1 = new javax.swing.JButton();
+        jButtonAbrirMenuRelatorio1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         fotoFundo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastro = new javax.swing.JMenu();
@@ -85,12 +90,12 @@ public class MenuAdministrador extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel3.setText("Relatório -");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        jLabel3.setText("Locacões -");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, -1, -1));
 
-        jButtonAbrirMenuRelatorio.setBackground(new java.awt.Color(255, 255, 255));
-        jButtonAbrirMenuRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/business_table_order_report_history_2332.png"))); // NOI18N
-        jPanel2.add(jButtonAbrirMenuRelatorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 140, 130));
+        jButtonAbrirMenuLocacoes.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonAbrirMenuLocacoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/business-color_money-time_icon-icons.com_53444.png"))); // NOI18N
+        jPanel2.add(jButtonAbrirMenuLocacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 140, 130));
 
         jButtonAbrirMenuCadastrarVeiculo.setBackground(new java.awt.Color(255, 255, 255));
         jButtonAbrirMenuCadastrarVeiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ExecutiveCar_Black_icon-icons.com_54904.png"))); // NOI18N
@@ -125,6 +130,14 @@ public class MenuAdministrador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButtonAbrirMenuCadastrarCliente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 140, 130));
+
+        jButtonAbrirMenuRelatorio1.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonAbrirMenuRelatorio1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/business_table_order_report_history_2332.png"))); // NOI18N
+        jPanel2.add(jButtonAbrirMenuRelatorio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 140, 130));
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel5.setText("Relatório -");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
         jInternalFrameAdministrador.getContentPane().add(jPanel2);
         jPanel2.setBounds(0, 70, 860, 400);
@@ -192,7 +205,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuClienteActionPerformed
 
     private void jMenuVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuVeiculoActionPerformed
-         new MenuCadastroVeiculos().setVisible(true);
+        new MenuCadastroVeiculos().setVisible(true);
     }//GEN-LAST:event_jMenuVeiculoActionPerformed
 
     private void jButtonAbrirMenuCadastrarMotorista2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAbrirMenuCadastrarMotorista2ActionPerformed
@@ -243,11 +256,13 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAbrirMenuCadastrarCliente1;
     private javax.swing.JButton jButtonAbrirMenuCadastrarMotorista2;
     private javax.swing.JButton jButtonAbrirMenuCadastrarVeiculo;
-    private javax.swing.JButton jButtonAbrirMenuRelatorio;
+    private javax.swing.JButton jButtonAbrirMenuLocacoes;
+    private javax.swing.JButton jButtonAbrirMenuRelatorio1;
     private javax.swing.JInternalFrame jInternalFrameAdministrador;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastro;

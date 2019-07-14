@@ -5,17 +5,20 @@
  */
 package br.com.ap220191.ec08_locacao_veiculos.view;
 
+import br.com.ap220191.ec08_locacao_veiculos.controller.MenuCadastroClienteController;
+import javax.swing.JFormattedTextField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author gattc
  */
 public class MenuCadastroCliente extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadastroCliente
-     */
+    private final MenuCadastroClienteController controller;
     public MenuCadastroCliente() {
         initComponents();
+        controller = new MenuCadastroClienteController(this);
     }
 
     /**
@@ -38,6 +41,8 @@ public class MenuCadastroCliente extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableClientes = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
+        jTextFieldUsuarioCliete = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -63,6 +68,11 @@ public class MenuCadastroCliente extends javax.swing.JFrame {
 
         jButtonCadastroCliente.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButtonCadastroCliente.setText("Confirmar cadastro");
+        jButtonCadastroCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadastroClienteActionPerformed(evt);
+            }
+        });
 
         jTableClientes.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
@@ -93,6 +103,9 @@ public class MenuCadastroCliente extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/business_application_addmale_useradd_insert_add_user_client_2312 (1).png"))); // NOI18N
 
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel6.setText("Usuario:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -106,16 +119,23 @@ public class MenuCadastroCliente extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldNomeCliente)
-                    .addComponent(jFormattedTextFieldCpf)
-                    .addComponent(jTextFieldSenhaCliente))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldNomeCliente)
+                            .addComponent(jFormattedTextFieldCpf)
+                            .addComponent(jTextFieldSenhaCliente)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldUsuarioCliete, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10)
                 .addComponent(jLabel5)
                 .addGap(30, 30, 30))
@@ -130,11 +150,15 @@ public class MenuCadastroCliente extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
                             .addComponent(jTextFieldNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(28, 28, 28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
                             .addComponent(jFormattedTextFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(28, 28, 28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jTextFieldUsuarioCliete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(14, 14, 14)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(jTextFieldSenhaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -175,6 +199,10 @@ public class MenuCadastroCliente extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroClienteActionPerformed
+        controller.salvarCliente();
+    }//GEN-LAST:event_jButtonCadastroClienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -211,6 +239,40 @@ public class MenuCadastroCliente extends javax.swing.JFrame {
         });
     }
 
+    public JFormattedTextField getjFormattedTextFieldCpf() {
+        return jFormattedTextFieldCpf;
+    }
+
+    public void setjFormattedTextFieldCpf(JFormattedTextField jFormattedTextFieldCpf) {
+        this.jFormattedTextFieldCpf = jFormattedTextFieldCpf;
+    }
+
+    public JTextField getjTextFieldNomeCliente() {
+        return jTextFieldNomeCliente;
+    }
+
+    public void setjTextFieldNomeCliente(JTextField jTextFieldNomeCliente) {
+        this.jTextFieldNomeCliente = jTextFieldNomeCliente;
+    }
+
+    public JTextField getjTextFieldSenhaCliente() {
+        return jTextFieldSenhaCliente;
+    }
+
+    public void setjTextFieldSenhaCliente(JTextField jTextFieldSenhaCliente) {
+        this.jTextFieldSenhaCliente = jTextFieldSenhaCliente;
+    }
+
+    public JTextField getjTextFieldUsuarioCliete() {
+        return jTextFieldUsuarioCliete;
+    }
+
+    public void setjTextFieldUsuarioCliete(JTextField jTextFieldUsuarioCliete) {
+        this.jTextFieldUsuarioCliete = jTextFieldUsuarioCliete;
+    }
+    
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastroCliente;
     private javax.swing.JFormattedTextField jFormattedTextFieldCpf;
@@ -219,11 +281,13 @@ public class MenuCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableClientes;
     private javax.swing.JTextField jTextFieldNomeCliente;
     private javax.swing.JTextField jTextFieldSenhaCliente;
+    private javax.swing.JTextField jTextFieldUsuarioCliete;
     // End of variables declaration//GEN-END:variables
 }

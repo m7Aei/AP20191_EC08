@@ -5,43 +5,30 @@ public class Cliente {
         private String usuario;
         private String senha;
 	private String cpf;
-	private boolean inadimplencia;
+	private boolean inadimplente;
 	private boolean serasa;
-        
-        public void Cliente(String usuario, String senha){
-            this.usuario = usuario;
-            this.senha = senha;
-        }
 
-	public Cliente(String nome, String cpf) {
-		super();
-		this.nome = nome;
-		this.cpf = cpf;
-	}
+    public Cliente(String nome, String usuario, String senha, String cpf, boolean inadimplente, boolean serasa) {
+        this.nome = nome;
+        this.usuario = usuario;
+        this.senha = senha;
+        this.cpf = cpf;
+        this.inadimplente = inadimplente;
+        this.serasa = serasa;
+    }
 
-	Cliente(String nome, String cpf, boolean inadimplencia, boolean serasa) {
-		super();
-		this.nome = nome;
-		this.cpf = cpf;
-		this.inadimplencia = inadimplencia;
-		this.serasa = serasa;
-	}
+    public Cliente(String usuario, String senha) {
+        this.usuario = usuario;
+        this.senha = senha;
+    }
+    
+    public String getNome() {
+        return nome;
+    }
 
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     public String getUsuario() {
         return usuario;
@@ -58,40 +45,34 @@ public class Cliente {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public boolean getInadimplente() {
+        return inadimplente;
+    }
+
+    public void setInadimplente(boolean inadimplente) {
+        this.inadimplente = inadimplente;
+    }
+
+    public boolean getSerasa() {
+        return serasa;
+    }
+
+    public void setSerasa(boolean serasa) {
+        this.serasa = serasa;
+    }
         
+        
+        
+       
 
-	public boolean isInadimplencia() {
-		return inadimplencia;
-	}
-
-	public void setInadimplencia(boolean inadimplencia) {
-		this.inadimplencia = inadimplencia;
-	}
-
-	public boolean isSerasa() {
-		return serasa;
-	}
-
-	public void setSerasa(boolean serasa) {
-		this.serasa = serasa;
-	}
-
-	public void cadastrarCliente(String nome, String cpf, boolean inadimplencia, boolean serasa) {
-		this.nome = nome;
-		this.cpf = cpf;
-		this.inadimplencia = inadimplencia;
-		this.serasa = serasa;
-	}
-
-	public String consultarCliente() {
-		return "Cliente\nNome=" + nome + "\nCPF=" + cpf + "\nInadimplência? =" + inadimplencia + "\nSerasa? =" + serasa;
-	}
-
-	public void editarCliente() {
-
-	}
-
-	public void removerCliente() {
-
-	}
+	
 }

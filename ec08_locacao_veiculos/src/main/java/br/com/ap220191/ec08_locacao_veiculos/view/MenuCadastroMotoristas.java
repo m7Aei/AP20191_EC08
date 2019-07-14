@@ -5,6 +5,11 @@
  */
 package br.com.ap220191.ec08_locacao_veiculos.view;
 
+import br.com.ap220191.ec08_locacao_veiculos.controller.MenuCadastroMotoristaController;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author gattc
@@ -14,8 +19,11 @@ public class MenuCadastroMotoristas extends javax.swing.JFrame {
     /**
      * Creates new form MenuCadastroMotoristas
      */
+    private final MenuCadastroMotoristaController controller;
+
     public MenuCadastroMotoristas() {
         initComponents();
+        controller = new MenuCadastroMotoristaController(this);
     }
 
     /**
@@ -29,15 +37,11 @@ public class MenuCadastroMotoristas extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextFieldNomeMotorista = new javax.swing.JTextField();
         jTextFieldMatriculaMotorista = new javax.swing.JTextField();
         jButtonCadastroMotorista = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTableMotoristas = new javax.swing.JTable();
-        jTextFieldSenhaMotorista = new javax.swing.JTextField();
         jTextFieldTempoMotorista = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jComboBoxTipoHabilitacao = new javax.swing.JComboBox();
@@ -53,9 +57,6 @@ public class MenuCadastroMotoristas extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("Habilitação:");
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel4.setText("Senha:");
-
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setText("Nome:");
 
@@ -64,33 +65,11 @@ public class MenuCadastroMotoristas extends javax.swing.JFrame {
 
         jButtonCadastroMotorista.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButtonCadastroMotorista.setText("Confirmar cadastro");
-
-        jTableMotoristas.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jTableMotoristas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Nome", "Matrícula", "Senha", "Tempo de empressa"
+        jButtonCadastroMotorista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadastroMotoristaActionPerformed(evt);
             }
-        ));
-        jTableMotoristas.setFocusable(false);
-        jScrollPane1.setViewportView(jTableMotoristas);
+        });
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setText("Tempo de empresa:");
@@ -104,37 +83,28 @@ public class MenuCadastroMotoristas extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
-                                    .addGap(13, 13, 13)
-                                    .addComponent(jTextFieldSenhaMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextFieldTempoMotorista)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBoxTipoHabilitacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(19, 19, 19)
-                                    .addComponent(jTextFieldNomeMotorista))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addGap(13, 13, 13)
-                                    .addComponent(jTextFieldMatriculaMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel7)
-                        .addGap(30, 30, 30)))
-                .addContainerGap())
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldTempoMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBoxTipoHabilitacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addGap(19, 19, 19)
+                            .addComponent(jTextFieldNomeMotorista))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addGap(13, 13, 13)
+                            .addComponent(jTextFieldMatriculaMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(40, 40, 40))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(152, 152, 152)
                 .addComponent(jButtonCadastroMotorista)
@@ -146,6 +116,7 @@ public class MenuCadastroMotoristas extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextFieldNomeMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
@@ -153,10 +124,6 @@ public class MenuCadastroMotoristas extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(jTextFieldMatriculaMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jTextFieldSenhaMotorista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
@@ -166,13 +133,12 @@ public class MenuCadastroMotoristas extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jComboBoxTipoHabilitacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonCadastroMotorista)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(200, 200, 200))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 112, 470, 430));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 112, 470, 240));
 
         jPanel2.setBackground(new java.awt.Color(27, 187, 125));
 
@@ -201,6 +167,10 @@ public class MenuCadastroMotoristas extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonCadastroMotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroMotoristaActionPerformed
+        controller.salvarMotorista();
+    }//GEN-LAST:event_jButtonCadastroMotoristaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -237,23 +207,59 @@ public class MenuCadastroMotoristas extends javax.swing.JFrame {
         });
     }
 
+    public String getjComboBoxTipoHabilitacao() {
+        String habilitacao;
+        habilitacao = (String) jComboBoxTipoHabilitacao.getSelectedItem();
+
+        return habilitacao;
+    }
+
+    public void setjComboBoxTipoHabilitacao(JComboBox jComboBoxTipoHabilitacao) {
+        this.jComboBoxTipoHabilitacao = jComboBoxTipoHabilitacao;
+    }
+
+    public JTextField getjTextFieldMatriculaMotorista() {
+        return jTextFieldMatriculaMotorista;
+    }
+
+    public void setjTextFieldMatriculaMotorista(JTextField jTextFieldMatriculaMotorista) {
+        this.jTextFieldMatriculaMotorista = jTextFieldMatriculaMotorista;
+    }
+
+    public JTextField getjTextFieldNomeMotorista() {
+        return jTextFieldNomeMotorista;
+    }
+
+    public void setjTextFieldNomeMotorista(JTextField jTextFieldNomeMotorista) {
+        this.jTextFieldNomeMotorista = jTextFieldNomeMotorista;
+    }
+
+    public JTextField getjTextFieldTempoMotorista() {
+        return jTextFieldTempoMotorista;
+    }
+
+    public void setjTextFieldTempoMotorista(JTextField jTextFieldTempoMotorista) {
+        this.jTextFieldTempoMotorista = jTextFieldTempoMotorista;
+    }
+
+
+    
+      
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastroMotorista;
     private javax.swing.JComboBox jComboBoxTipoHabilitacao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableMotoristas;
     private javax.swing.JTextField jTextFieldMatriculaMotorista;
     private javax.swing.JTextField jTextFieldNomeMotorista;
-    private javax.swing.JTextField jTextFieldSenhaMotorista;
     private javax.swing.JTextField jTextFieldTempoMotorista;
     // End of variables declaration//GEN-END:variables
 }
