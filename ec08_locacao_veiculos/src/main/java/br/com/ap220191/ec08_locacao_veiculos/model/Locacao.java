@@ -14,14 +14,15 @@ public class Locacao {
     private String matriculaMotorista;
     private String placa;
     private boolean status;
-    
-   
-    
+    private String nomeMotorista;
+
+
+
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     SimpleDateFormat dia = new SimpleDateFormat("dd");
     SimpleDateFormat mes = new SimpleDateFormat("MM");
     SimpleDateFormat ano = new SimpleDateFormat("yyyy");
-    
+
     Date data = new Date();
 
     public Date getDataLocacao() {

@@ -23,12 +23,12 @@ public class MenuCadastroAutomovelController {
 
     public void salvarAutomovel() {
 
-        Automovel automovel = new Automovel(view.getjTextFieldPlaca().getText(),view.getjComboBoxTipoVeículo());
+//        Automovel automovel = new Automovel(view.getjTextFieldPlaca().getText(),view.getjComboBoxTipoVeículo());
 
         try {
             Connection conexao = new Conexao().getConnection();
             AutomovelDAO automovelDao = new AutomovelDAO(conexao);
-            automovelDao.insert(automovel);
+//            automovelDao.insert(automovel);
         } catch (SQLException ex) {
             Logger.getLogger(MenuCadastroVeiculos.class.getName()).log(Level.SEVERE, null, ex);
         }
