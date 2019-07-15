@@ -1,21 +1,18 @@
 package br.com.ap220191.ec08_locacao_veiculos.model;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table
 public class Automovel {
-
+    @Column
     private String placa;
+    @Column
     private boolean disponibilidade;
-
-
+    @Column
     private TipoAutomovel tipo;
-
-   
 
     public Automovel(String placa, boolean disponibilidade, TipoAutomovel tipo) {
         this.placa = placa;

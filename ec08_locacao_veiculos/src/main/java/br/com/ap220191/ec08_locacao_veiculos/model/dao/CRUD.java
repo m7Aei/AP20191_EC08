@@ -1,11 +1,18 @@
 package br.com.ap220191.ec08_locacao_veiculos.model.dao;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public interface CRUD {
+public abstract class CRUD {
 
-    void save();
+    public void salvar(SessionFactory sessionFactory){
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        session.save(this);
+        session.getTransaction().commit();
+        session.close();
+    }
     static Object load(){return null;}
 
     static SessionFactory buildSessionFactory(Class classe){
