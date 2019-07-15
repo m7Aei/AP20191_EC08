@@ -139,7 +139,7 @@ public class MenuCadastroVeiculos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroClienteActionPerformed
-        controller.salvarAutomovel();
+       
     }//GEN-LAST:event_jButtonCadastroClienteActionPerformed
 
     /**

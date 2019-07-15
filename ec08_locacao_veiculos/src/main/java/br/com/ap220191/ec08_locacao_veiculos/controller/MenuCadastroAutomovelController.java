@@ -21,8 +21,10 @@ public class MenuCadastroAutomovelController {
         this.view = view;
     }
 
-    public void salvarAutomovel() {
 
+<<<<<<< HEAD
+    
+=======
 //        Automovel automovel = new Automovel(view.getjTextFieldPlaca().getText(),view.getjComboBoxTipoVeículo());
 
         try {
@@ -33,5 +35,6 @@ public class MenuCadastroAutomovelController {
             Logger.getLogger(MenuCadastroVeiculos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+>>>>>>> 64365f6fa1e4cbd44f28505aca283eb848e4b1f6
     
 }

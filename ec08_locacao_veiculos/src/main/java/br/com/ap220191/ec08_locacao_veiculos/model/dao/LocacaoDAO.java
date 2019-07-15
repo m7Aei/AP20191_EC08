@@ -20,18 +20,6 @@ public class LocacaoDAO {
         this.connection = connection;
     }
 
-    public void insert(Locacao locacao) throws SQLException {
-
-        try {
-            String sql = "insert into locacao (datalocacao, datedevolucao, motorista, placa, cpf, status) values ('" + locacao.getDataLocacao()+ "','" + locacao.getDataDevolucao()+ "','" + locacao.getNomeMotorista()+"', '" + locacao.getPlaca()+ "','" + locacao.getCpfCliente()+ "','false')";
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.execute();
-
-            JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao salvar: " + ex);
-        }
-
-    }
+   
     
 }
