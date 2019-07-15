@@ -2,12 +2,15 @@ package br.com.ap220191.ec08_locacao_veiculos.model;
 
 public class Cliente {
 	private String nome;
-        private String usuario;
-        private String senha;
-	private String cpf;
+        private String cpf;
 	private boolean inadimplente;
 	private boolean serasa;
-
+        private Motorista ultimoMotorista; 
+        
+        private String usuario;
+        private String senha;
+	
+ 
     public Cliente(String nome, String usuario, String senha, String cpf, boolean inadimplente, boolean serasa) {
         this.nome = nome;
         this.usuario = usuario;
@@ -16,6 +19,16 @@ public class Cliente {
         this.inadimplente = inadimplente;
         this.serasa = serasa;
     }
+
+    public Cliente(String nome, String cpf, boolean inadimplente, boolean serasa, Motorista ultimoMotorista) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.inadimplente = inadimplente;
+        this.serasa = serasa;
+        this.ultimoMotorista = ultimoMotorista;
+    }
+    
+    
 
     public Cliente(String usuario, String senha) {
         this.usuario = usuario;

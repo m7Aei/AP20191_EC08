@@ -4,10 +4,10 @@ import java.util.List;
 public class Motorista {
     private String nome, matricula;
     private String habilitacao;
-    private String tempoEmpresa;
+    private Double tempoEmpresa;
     private boolean disponibilidadeMotorista;
     
-    public Motorista(String nome, String matricula, String habilitacao, String tempoEmpresa) {
+    public Motorista(String nome, String matricula, String habilitacao, Double tempoEmpresa) {
         this.nome = nome;
         this.matricula = matricula;
         this.habilitacao = habilitacao;
@@ -51,11 +51,11 @@ public class Motorista {
         this.habilitacao = habilitacao;
     }
 
-    public String getTempoEmpresa() {
+    public Double getTempoEmpresa() {
         return tempoEmpresa;
     }
 
-    public void setTempoEmpresa(String tempoEmpresa) {
+    public void setTempoEmpresa(Double tempoEmpresa) {
         this.tempoEmpresa = tempoEmpresa;
     }
 
