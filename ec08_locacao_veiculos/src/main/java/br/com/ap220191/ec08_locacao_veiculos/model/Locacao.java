@@ -1,23 +1,46 @@
 package br.com.ap220191.ec08_locacao_veiculos.model;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class Locacao {
     
-    private Date dataLocacao;
-    private Date dataDevolucao;
-    private double quilometragemLocacao = 0;
+    private String dataLocacao;
+    private String dataDevolucao;
+    private double quilometragemLocacao;
     private double quilometragemDevolucao;
-    private String cpfCliente;
-    private String matriculaMotorista;
-    private String placa;
+    private Cliente cliente;
+    private Motorista motorista;
+    private Automovel automovel;
     private boolean status;
+<<<<<<< HEAD
+    
+    
+
+    public Locacao(String dataLocacao, String dataDevolucao, double quilometragemLocacao, Cliente cliente, Motorista motorista, Automovel automovel, boolean status) {
+        this.dataLocacao = dataLocacao;
+        this.dataDevolucao = dataDevolucao;
+        this.quilometragemLocacao = quilometragemLocacao;
+        this.cliente = cliente;
+        this.motorista = motorista;
+        this.automovel = automovel;
+        this.status = status;
+    }
+
+ 
+    
+   
+    
+=======
     private String nomeMotorista;
 
 
 
+>>>>>>> 64365f6fa1e4cbd44f28505aca283eb848e4b1f6
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     SimpleDateFormat dia = new SimpleDateFormat("dd");
     SimpleDateFormat mes = new SimpleDateFormat("MM");
@@ -25,93 +48,99 @@ public class Locacao {
 
     Date data = new Date();
 
-    public Date getDataLocacao() {
+    public String getDataLocacao() {
         return dataLocacao;
     }
 
-    public void setDataLocacao(Date dataLocacao) {
+    public void setDataLocacao(String dataLocacao) {
         this.dataLocacao = dataLocacao;
     }
 
-    public Date getDataDevolucao() {
+    public String getDataDevolucao() {
         return dataDevolucao;
     }
 
-    public void setDataDevolucao(Date dataDevolucao) {
+    public void setDataDevolucao(String dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
     }
 
-    public String getCpfCliente() {
-        return cpfCliente;
+    public double getQuilometragemLocacao() {
+        return quilometragemLocacao;
     }
 
-    public void setCpfCliente(String cpfCliente) {
-        this.cpfCliente = cpfCliente;
+    public void setQuilometragemLocacao(double quilometragemLocacao) {
+        this.quilometragemLocacao = quilometragemLocacao;
     }
 
-    public String getNomeMotorista() {
-        return nomeMotorista;
+    public double getQuilometragemDevolucao() {
+        return quilometragemDevolucao;
     }
 
-    public void setNomeMotorista(String nomeMotorista) {
-        this.nomeMotorista = nomeMotorista;
+    public void setQuilometragemDevolucao(double quilometragemDevolucao) {
+        this.quilometragemDevolucao = quilometragemDevolucao;
     }
 
-    public String getPlaca() {
-        return placa;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Motorista getMotorista() {
+        return motorista;
+    }
+
+    public void setMotorista(Motorista motorista) {
+        this.motorista = motorista;
+    }
+
+    public Automovel getAutomovel() {
+        return automovel;
+    }
+
+    public void setAutomovel(Automovel automovel) {
+        this.automovel = automovel;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public int calcularData(){    
+     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+     LocalDate inicio =  LocalDate.parse(getDataLocacao(), formatter);
+     LocalDate fim = LocalDate.parse(getDataDevolucao(), formatter);
+     return (int) inicio.until(fim, ChronoUnit.DAYS);
+    }
+
+    public Locacao() {
     }
     
   
     
-    public double calcularValor() throws ParseException {
-        int dias, meses, anos;
-        Date data1 = null, data2 = null;
-        data1 = sdf.parse(String.valueOf(getDataLocacao()));
-        data2 = sdf.parse(String.valueOf(getDataDevolucao()));
-        int dl = Integer.parseInt(dia.format(data1));
-        int dd = Integer.parseInt(dia.format(data2));
-        int ml = Integer.parseInt(mes.format(data1));
-        int md = Integer.parseInt(mes.format(data2));
-        int al = Integer.parseInt(ano.format(data1));
-        int ad = Integer.parseInt(ano.format(data2));
-        if(dd >= dl){
-            dias = dd - dl;
-        }else{
-            dias = (30 + dd) - dl;
-            md = md--;
-        }
-        if(md >= ml){
-            meses = md - ml;
-        }else{
-            meses = (12 + md) - ml;
-            ad = ad--;
-        }
-        anos = ad - al;
-        int diasTotais = (360 * anos) + (12 * meses) + dias;
-        
-//        return (diasTotais * getValorDiaria()) + (getQuilometragemFinal() - getQuilometragemInicial())*getValorQuilometragem();
-        return diasTotais;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+

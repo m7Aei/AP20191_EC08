@@ -15,4 +15,27 @@ import java.util.logging.Logger;
  */
 public class MenuCadastroMotoristaController {
 
+    private MenuCadastroMotoristas view;
+
+    public MenuCadastroMotoristaController(MenuCadastroMotoristas view) {
+        this.view = view;
+    }
+
+<<<<<<< HEAD
+   
+=======
+    public void salvarMotorista() {
+
+//        Motorista motorista = new Motorista(view.getjTextFieldNomeMotorista().getText(), view.getjTextFieldMatriculaMotorista().getText(), view.getjComboBoxTipoHabilitacao(), view.getjTextFieldTempoMotorista().getText());
+
+        try {
+            Connection conexao = new Conexao().getConnection();
+            MotoristaDAO motoristaDao = new MotoristaDAO(conexao);
+//            motoristaDao.insert(motorista);
+        } catch (SQLException ex) {
+            Logger.getLogger(MenuCadastroMotoristas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+>>>>>>> 64365f6fa1e4cbd44f28505aca283eb848e4b1f6
+
 }
