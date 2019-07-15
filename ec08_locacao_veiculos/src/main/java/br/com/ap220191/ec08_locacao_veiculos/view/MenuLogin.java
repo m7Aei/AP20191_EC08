@@ -21,12 +21,10 @@ import javax.swing.JTextField;
  */
 public class MenuLogin extends javax.swing.JFrame {
 
-    private final MenuLoginController controller;
     private Point point = new Point();
 
     public MenuLogin() {
         initComponents();
-        controller = new MenuLoginController(this);
         setLocationRelativeTo(null);
     }
 
@@ -243,11 +241,10 @@ public class MenuLogin extends javax.swing.JFrame {
 
     private void BtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEntrarActionPerformed
 
-     
-        
+
+
         try {
-            controller.autenticarUsuario();
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(MenuLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
         Point p = this.getLocation();

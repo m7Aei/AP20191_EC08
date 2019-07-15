@@ -1,24 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.ap220191.ec08_locacao_veiculos.view;
 
 import br.com.ap220191.ec08_locacao_veiculos.controller.MenuCadastroClienteController;
 import javax.swing.JFormattedTextField;
 import javax.swing.JTextField;
 
-/**
- *
- * @author gattc
- */
 public class MenuCadastroCliente extends javax.swing.JFrame {
 
-    private final MenuCadastroClienteController controller;
     public MenuCadastroCliente() {
         initComponents();
-        controller = new MenuCadastroClienteController(this);
     }
 
     /**
@@ -200,7 +189,6 @@ public class MenuCadastroCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroClienteActionPerformed
-        controller.salvarCliente();
     }//GEN-LAST:event_jButtonCadastroClienteActionPerformed
 
     /**
