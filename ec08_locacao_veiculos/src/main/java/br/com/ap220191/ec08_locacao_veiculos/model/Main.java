@@ -13,16 +13,25 @@ import org.hibernate.cfg.Configuration;
  * @author T-Gamer
  */
 public class Main {
+    static final SessionFactory sessionFactory = buildSessionFactory();
     public static void main(String[] args) {
         Pagamento pagamento = new Pagamento();
         pagamento.setValor((float) 22.50);
         pagamento.setParcelamento(3);
 
-        final SessionFactory sessionFactory = buildSessionFactory();
-
         pagamento.salvar(sessionFactory);
         Pagamento pagamento1 = Pagamento.buscar(sessionFactory,1);
-        System.out.println("Valor recuperado: "+pagamento1.getValor());
+        System.out.println("Valor recuperado: "+pagamento1.getValor()+"\n");
+
+
+        Motorista motorista = new Motorista();
+        motorista.setNome("natalinda amorDaMinha vida");
+        motorista.salvar(sessionFactory);
+        Motorista motoristaDoBanco = Motorista.buscarPorNome(sessionFactory, "natalinda amorDaMinha vida");
+
+        System.out.println("Nome do Motorista Do Banco:" + motoristaDoBanco.getNome());
+
+
     }
 
     private static SessionFactory buildSessionFactory(){

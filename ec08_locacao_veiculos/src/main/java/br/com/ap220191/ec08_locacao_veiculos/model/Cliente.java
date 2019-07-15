@@ -1,16 +1,31 @@
 package br.com.ap220191.ec08_locacao_veiculos.model;
 
-public class Cliente {
-	private String nome;
-        private String cpf;
-	private boolean inadimplente;
-	private boolean serasa;
-        private Motorista ultimoMotorista; 
-        
-        private String usuario;
-        private String senha;
-	
- 
+
+import br.com.ap220191.ec08_locacao_veiculos.model.dao.ClienteDAO;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table
+public class Cliente extends ClienteDAO {
+    @Column
+    private String nome;
+    @Column
+    private String cpf;
+    @Column
+    private boolean inadimplente;
+    @Column
+    private boolean serasa;
+    @Column
+    private Motorista ultimoMotorista;
+    @Column
+    private String usuario;
+    @Column
+    private String senha;
+
+
     public Cliente(String nome, String usuario, String senha, String cpf, boolean inadimplente, boolean serasa) {
         this.nome = nome;
         this.usuario = usuario;
@@ -37,14 +52,11 @@ public class Cliente {
         this.serasa = serasa;
         this.ultimoMotorista = ultimoMotorista;
     }
-    
-    
 
     public Cliente(String usuario, String senha) {
         this.usuario = usuario;
         this.senha = senha;
     }
-    
     public String getNome() {
         return nome;
     }
@@ -92,10 +104,4 @@ public class Cliente {
     public void setSerasa(boolean serasa) {
         this.serasa = serasa;
     }
-        
-        
-        
-       
-
-	
 }
