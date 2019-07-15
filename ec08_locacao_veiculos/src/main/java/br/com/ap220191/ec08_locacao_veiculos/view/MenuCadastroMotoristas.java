@@ -19,11 +19,9 @@ public class MenuCadastroMotoristas extends javax.swing.JFrame {
     /**
      * Creates new form MenuCadastroMotoristas
      */
-    private final MenuCadastroMotoristaController controller;
 
     public MenuCadastroMotoristas() {
         initComponents();
-        controller = new MenuCadastroMotoristaController(this);
     }
 
     /**
@@ -169,7 +167,6 @@ public class MenuCadastroMotoristas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCadastroMotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroMotoristaActionPerformed
-        controller.salvarMotorista();
     }//GEN-LAST:event_jButtonCadastroMotoristaActionPerformed
 
     /**
