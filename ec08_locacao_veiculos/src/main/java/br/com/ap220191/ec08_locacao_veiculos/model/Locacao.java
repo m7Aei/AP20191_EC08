@@ -1,4 +1,5 @@
 package br.com.ap220191.ec08_locacao_veiculos.model;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -7,8 +8,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 public class Locacao {
-    
+
     private String dataLocacao;
     private String dataDevolucao;
     private double quilometragemLocacao;
@@ -18,8 +20,9 @@ public class Locacao {
     private Automovel automovel;
     private boolean status;
 
-    
-    
+    private String nomeMotorista;
+
+    Date data = new Date();
 
     public Locacao(String dataLocacao, String dataDevolucao, double quilometragemLocacao, Cliente cliente, Motorista motorista, Automovel automovel, boolean status) {
         this.dataLocacao = dataLocacao;
@@ -30,15 +33,6 @@ public class Locacao {
         this.automovel = automovel;
         this.status = status;
     }
-
- 
-    
-   
-
-    private String nomeMotorista;
-
-
-    Date data = new Date();
 
     public String getDataLocacao() {
         return dataLocacao;
@@ -104,61 +98,51 @@ public class Locacao {
         this.status = status;
     }
 
-    public int calcularData(){    
-     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-     LocalDate inicio =  LocalDate.parse(getDataLocacao(), formatter);
-     LocalDate fim = LocalDate.parse(getDataDevolucao(), formatter);
-     return (int) inicio.until(fim, ChronoUnit.DAYS);
+    public int calcularData() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate inicio = LocalDate.parse(getDataLocacao(), formatter);
+        LocalDate fim = LocalDate.parse(getDataDevolucao(), formatter);
+        return (int) inicio.until(fim, ChronoUnit.DAYS);
     }
 
-    public void realizarLocacao(Cliente cliente, Automovel automovel){
-        //pegar entrada de datas 
+    public void realizarLocacao(Cliente cliente, Automovel automovel) {
+        //pegar entrada de datas
         //pegar valor de tipo do carro 
-        
-        String dataLoc, dataDev; 
-        dataLoc="12/05/2019"; 
-        dataDev="20/06/2019";
-        
-       
-        if(cliente.getUltimoMotorista()!=null){
+
+        String dataLoc, dataDev;
+        dataLoc = "12/05/2019";
+        dataDev = "20/06/2019";
+
+        if (cliente.getUltimoMotorista() != null) {
             Motorista m = cliente.getUltimoMotorista();
-            verificarHabilitacao(automovel.getTipo()+ "", m.getHabilitacao());
+            if ((verificarHabilitacao(automovel.getTipo() + "", m.getHabilitacao()))) {
+               System.out.print("Habilitação inválida, procure outro motorista");
+               //listar todos os motoristas e pegar o de maior tempo 
+               //Motorista.listarTodos();
+            } 
         }
-       
+        else {
+                System.out.print("Sem ultimo motorista");
+                //Motorista.listarTodos();
+            }
+
     }
-     public static boolean verificarHabilitacao(String tipo, String habilitacao){
-        
-        if(tipo=="UTILITARIO"){  
-            if((habilitacao!="C")&&(habilitacao!="D")){
+
+    public static boolean verificarHabilitacao(String tipo, String habilitacao) {
+
+        if (tipo.equalsIgnoreCase("UTILITARIO")) {
+
+            if (!(habilitacao.equalsIgnoreCase("C")) || !(habilitacao.equalsIgnoreCase("D"))) {
+
                 return false;
             }
         }
-//        if(habilitacao=="A"){
-//            if
-//        }
-//
-        return false;
-    }
-    
-  
-    
-}
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        if (habilitacao.equalsIgnoreCase("A")) {
+            return false;
+        } else {
+            return true;
+        }
 
+    }
+
+}
