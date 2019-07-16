@@ -22,6 +22,19 @@ public class MenuCadastroAutomovelController {
     }
 
 
+<<<<<<< HEAD
     
+=======
+//        Automovel automovel = new Automovel(view.getjTextFieldPlaca().getText(),view.getjComboBoxTipoVeículo());
+
+        try {
+            Connection conexao = new Conexao().getConnection();
+            AutomovelDAO automovelDao = new AutomovelDAO(conexao);
+//            automovelDao.insert(automovel);
+        } catch (SQLException ex) {
+            Logger.getLogger(MenuCadastroVeiculos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+>>>>>>> 64365f6fa1e4cbd44f28505aca283eb848e4b1f6
     
 }

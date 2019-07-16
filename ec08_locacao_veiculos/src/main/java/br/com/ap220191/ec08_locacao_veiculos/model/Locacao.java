@@ -17,6 +17,7 @@ public class Locacao {
     private Motorista motorista;
     private Automovel automovel;
     private boolean status;
+<<<<<<< HEAD
     
     
 
@@ -34,11 +35,17 @@ public class Locacao {
     
    
     
+=======
+    private String nomeMotorista;
+
+
+
+>>>>>>> 64365f6fa1e4cbd44f28505aca283eb848e4b1f6
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     SimpleDateFormat dia = new SimpleDateFormat("dd");
     SimpleDateFormat mes = new SimpleDateFormat("MM");
     SimpleDateFormat ano = new SimpleDateFormat("yyyy");
-    
+
     Date data = new Date();
 
     public String getDataLocacao() {

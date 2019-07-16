@@ -1,9 +1,11 @@
 package br.com.ap220191.ec08_locacao_veiculos.model;
 
+import br.com.ap220191.ec08_locacao_veiculos.model.dao.PagamentoDAO;
+
 import javax.persistence.*;
 
-@Entity(name = "Pagamento")
-public class Pagamento {
+@Entity
+public class Pagamento extends PagamentoDAO {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;

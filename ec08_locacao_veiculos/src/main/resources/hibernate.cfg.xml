@@ -9,7 +9,8 @@
         <property name="connection.url">jdbc:h2:mem:test;DB_CLOSE_DELAY=-1</property>
         <property name="dialect">org.hibernate.dialect.H2Dialect</property>
         <property name="show_sql">true</property>
-        <property name="hbm2ddl.auto">create</property>
+<!--        <property name="hbm2ddl.auto">create</property>-->
+        <property name="hbm2ddl.auto">create-drop</property>
         <mapping class="br.com.ap220191.ec08_locacao_veiculos.model.Pagamento"/>
     </session-factory>
 </hibernate-configuration>

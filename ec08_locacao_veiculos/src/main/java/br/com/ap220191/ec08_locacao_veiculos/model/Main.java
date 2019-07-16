@@ -5,7 +5,6 @@
  */
 package br.com.ap220191.ec08_locacao_veiculos.model;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -21,18 +20,12 @@ public class Main {
 
         final SessionFactory sessionFactory = buildSessionFactory();
 
-        final Session session = sessionFactory.openSession();
-        session.save(pagamento);
-        Pagamento pagamento1 = session.get(Pagamento.class, 1);
-
-        System.out.println("Pagamento1, valor: " + pagamento1.getValor() + "\n parcelamento: " + pagamento1.getParcelamento());
-        session.close();
-        sessionFactory.close();
-
+        pagamento.salvar(sessionFactory);
+        Pagamento pagamento1 = Pagamento.buscar(sessionFactory,1);
+        System.out.println("Valor recuperado: "+pagamento1.getValor());
     }
 
     private static SessionFactory buildSessionFactory(){
-
         return new Configuration()
                 .configure()
                 .buildSessionFactory();
