@@ -16,11 +16,27 @@ public class Pagamento extends PagamentoDAO {
 	@Column
 	private float valor;
         
-        public static Double calcularPreco(int dias, Locacao locacao){
-           Double kmTotal = (kmFinal-kmInicio);
-           Double valorTotal = (kmTotal*7)+(dias*30);
+        public static Double calcularPreco(Locacao locacao){
+           int dias = Locacao.calcularData(locacao.getDataLocacao(), locacao.getDataLocacao());
+           Double kmTotal = locacao.getQuilometragemDevolucao()-locacao.getQuilometragemLocacao();
+           Double valorParcial = (kmTotal*7)+(dias*30);
            
-           valorTotal= valorTotal + (valorTotal*(automovel.getTipo().getAliquota())/100);
+           Double valorTotal, taxa=0.0; 
+           if(locacao.getMotorista().getTempoEmpresa()>=5.0){
+               taxa=5.0;
+           }
+           taxa=taxa+locacao.getAutomovel().getTipo().getAliquota();
+           
+           int diasDesconto = (int) Locacao.calcularData(locacao.getCliente().getUltimaLocacaoData() , locacao.getDataDevolucao());
+           if(diasDesconto<15)
+               taxa=taxa-10.0;
+           
+           taxa= taxa/100; 
+           
+           valorTotal= valorParcial*(taxa+1);
+           
+           
+                    
             return valorTotal; 
 
             
