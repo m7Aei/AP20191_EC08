@@ -1,24 +1,18 @@
 package br.com.ap220191.ec08_locacao_veiculos.model;
 
 import br.com.ap220191.ec08_locacao_veiculos.model.dao.MotoristaDAO;
+import jdk.internal.dynalink.beans.StaticClass;
 
 import javax.persistence.*;
+import java.util.LinkedList;
+import java.util.List;
 
-@Entity
-@Table
 public class Motorista extends MotoristaDAO {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    @Column
+    public static List<Motorista> motoristas = new LinkedList<>();
     private String nome;
-    @Column
     private String matricula;
-    @Column
     private String habilitacao;
-    @Column
     private Double tempoEmpresa;
-    @Column
     private boolean disponibilidadeMotorista;
 
     public Motorista(String nome, String matricula, String habilitacao, Double tempoEmpresa) {
@@ -27,9 +21,7 @@ public class Motorista extends MotoristaDAO {
         this.habilitacao = habilitacao;
         this.tempoEmpresa = tempoEmpresa;
         this.disponibilidadeMotorista = true;
-    }
-
-    public Motorista() {
+        motoristas.add(this);
     }
 
     public String getNome() {
@@ -72,22 +64,21 @@ public class Motorista extends MotoristaDAO {
         this.tempoEmpresa = tempoEmpresa;
     }
 
-    public void cadastrarMotorista(String nome, String matricula, char habilitacao, int tempoEmpresa) {
-        setNome(this.nome);
-        setMatricula(this.matricula);
-        setHabilitacao(this.habilitacao);
-        setTempoEmpresa(this.tempoEmpresa);
+    public static List<Motorista> obterMotoristaExperientes (){
+        List<Motorista> motoristasExperientes =  new LinkedList<Motorista>();
+        for(Motorista motorista : motoristas ) {
+            if(motorista.getTempoEmpresa() > 5 ){
+                motoristasExperientes.add(motorista);
+            }
+        }
+        return motoristasExperientes;
     }
 
-    public void removerMotorista() {
-
-    }
-
-    public void editarMotorista() {
-
-    }
-
-    public char verificarHabilitacao() {
-        return ' ';
+    @Override
+    public String toString() {
+        return "Motorista{" +
+                "nome='" + nome + '\'' +
+                ", matricula='" + matricula + '\'' +
+                '}';
     }
 }

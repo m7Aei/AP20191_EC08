@@ -3,29 +3,23 @@ package br.com.ap220191.ec08_locacao_veiculos.model;
 import br.com.ap220191.ec08_locacao_veiculos.model.dao.AutomovelDAO;
 
 import javax.persistence.*;
+import java.util.LinkedList;
+import java.util.List;
 
-@Entity
-@Table
+
 public class Automovel extends AutomovelDAO {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    @Column
+    public static List<Automovel> automoveis = new LinkedList<>();
     private String placa;
-    @Column
     private boolean disponibilidade;
-    @Column
     private TipoAutomovel tipo;
-    @Column 
-    private Double quilometragem = new Double(0);
+    private Double quilometragem = 0.0;
 
     public Automovel(String placa, boolean disponibilidade, TipoAutomovel tipo) {
         this.placa = placa;
         this.disponibilidade = disponibilidade;
         this.tipo = tipo;
+        automoveis.add(this);
     }
-
-    public Automovel(){}
 
     public Double getQuilometragem() {
         return quilometragem;
@@ -64,6 +58,15 @@ public class Automovel extends AutomovelDAO {
     public void cadastrarAutomovel(String placa) {
         setPlaca(this.placa);
 
+    }
+
+    @Override
+    public String toString() {
+        return "Automovel{" +
+                "placa='" + placa + '\'' +
+                ", tipo=" + tipo +
+                ", quilometragem=" + quilometragem +
+                '}';
     }
 
     public void removerAutomovel() {

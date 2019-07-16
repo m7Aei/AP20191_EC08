@@ -1,5 +1,6 @@
 package br.com.ap220191.ec08_locacao_veiculos.model;
 
+import net.bytebuddy.implementation.bind.MethodDelegationBinder;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -20,7 +21,14 @@ public class PagamentoTest {
     @Test
     public void TestaCalcularPreco() {
         Locacao locacao = setupLocacao();
-        Pagamento pagamento = new Pagamento(1,locacao,0.25,2.00);
+        Pagamento pagamento = new Pagamento(1,locacao,0.25,2.00, FormaPagamento.CARTAO_CREDITO);
         assertEquals(3156.0,pagamento.getValor(),0.001);
+    }
+    @Test
+    public void TestaNota() {
+        Locacao locacao = setupLocacao();
+        Pagamento pagamento = new Pagamento(1,locacao,0.25,2.00, FormaPagamento.CARTAO_CREDITO);
+
+       System.out.println(pagamento.gerarNota());
     }
 }

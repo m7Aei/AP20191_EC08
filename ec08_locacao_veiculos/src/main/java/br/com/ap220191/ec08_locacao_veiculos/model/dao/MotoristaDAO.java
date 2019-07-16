@@ -25,7 +25,7 @@ public class MotoristaDAO  extends CRUD{
         return (Motorista) result;
     }
 
-    public static List<Motorista> buscarTodosOsMotorista(SessionFactory sessionFactory) {
+    public static List<Motorista> buscarTodosOsMotoristaNoBanco(SessionFactory sessionFactory) {
         Session session = sessionFactory.openSession();
         Criteria criteria = session.createCriteria(Motorista.class);
         return session.createQuery("SELECT a FROM Motorista a", Motorista.class).getResultList();

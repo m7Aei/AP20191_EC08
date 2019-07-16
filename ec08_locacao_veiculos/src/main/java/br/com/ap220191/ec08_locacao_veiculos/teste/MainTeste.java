@@ -16,21 +16,14 @@ import br.com.ap220191.ec08_locacao_veiculos.model.TipoAutomovel;
  * @author Natalie
  */
 public class MainTeste {
-    
+    //testa Classes em memoria
     public static void main(String args[]){
-        String dataLoc, dataDev; 
-        dataLoc="12/05/2019"; 
-        dataDev="20/06/2019";
+        Cliente cliente1 = new Cliente("João", "12345678910");
+        Cliente cliente2 = new Cliente("Maria", "12345678910");
+        Cliente cliente3 = new Cliente("José", "12345678910");
+        Cliente cliente4 = new Cliente("Lara", "12345678910");
 
-        Motorista motorista = new Motorista("José", "5437A", "D", 5.0);
-        Cliente cliente = new Cliente("João", "12345678910");
-        Automovel a1 = new Automovel("123ABC", true, TipoAutomovel.UTILITARIO);
-        a1.setQuilometragem(120000.);
-        Locacao.verificaInadinplencia(cliente);
-        Locacao.verificarHabilitacao(a1,motorista);
-        Locacao loc = new Locacao(dataLoc,dataDev, cliente, motorista, a1);
-        System.out.println("tempo locado: "+loc.calcularData()+"Quilometragem Inicial: "+loc.getQuilometragemLocacao());
-        //System.out.println(a1.getTipo().getAliquota());
+        System.out.println(Cliente.clientes.size() + " "+Cliente.clientes.get(1).getNome());
                        
     }
     

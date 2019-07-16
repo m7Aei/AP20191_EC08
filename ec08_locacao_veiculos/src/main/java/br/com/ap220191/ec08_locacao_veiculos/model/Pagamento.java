@@ -1,15 +1,18 @@
 package br.com.ap220191.ec08_locacao_veiculos.model;
 
-import br.com.ap220191.ec08_locacao_veiculos.model.dao.PagamentoDAO;
+import java.util.LinkedList;
+import java.util.List;
 
 
-public class Pagamento extends PagamentoDAO {
-
+public class Pagamento {
+    public static List<Pagamento> pagamentos = new LinkedList<>();
     private int parcelamento;
     private Double valor = 0.0;
     private Locacao locacao;
     private Double precoQuilometro;
     private Double precoDia;
+    private FormaPagamento formaPagamento;
+
     public Double getPrecoQuilometro() {
         return precoQuilometro;
     }
@@ -17,8 +20,6 @@ public class Pagamento extends PagamentoDAO {
     public Double getPrecoDia() {
         return precoDia;
     }
-
-
 
     public FormaPagamento getFormaPagamento() {
         return formaPagamento;
@@ -36,14 +37,16 @@ public class Pagamento extends PagamentoDAO {
         this.formaPagamento = formaPagamento;
     }
 
-    private FormaPagamento formaPagamento;
 
-    public Pagamento(int parcelamento, Locacao locacao, Double precoQuilometro, Double precoDia) {
+
+    public Pagamento(int parcelamento, Locacao locacao, Double precoQuilometro, Double precoDia, FormaPagamento formaPagamento) {
         this.parcelamento = parcelamento;
         this.locacao = locacao;
         this.precoQuilometro = precoQuilometro;
         this.precoDia = precoDia;
+        this.formaPagamento=formaPagamento;
         calcularPreco();
+        pagamentos.add(this);
     }
 
     public void calcularPreco() {
@@ -64,16 +67,31 @@ public class Pagamento extends PagamentoDAO {
         this.setValor(valorParcial * (taxa + 1));
     }
 
-    public void efetuarPagamento() {
+    public String gerarNota() {
+    locacao.getCliente().setUltimaLocacaoData(locacao.getDataDevolucao());
+    return this.toString();
 
     }
-//	public void consultarSerasa() {
-//
-//	}
-//	public void consultarInadimplencia() {
-//
-//	}
 
+    @Override
+    public String toString() {
+        return "Pagamento{" +
+                "parcelamento=" + parcelamento +
+                ", valor=" + valor +
+                ", locacao=" + locacao.toString() +
+                ", precoQuilometro=" + precoQuilometro +
+                ", precoDia=" + precoDia +
+                ", formaPagamento=" + formaPagamento +
+                '}';
+    }
+
+    public static boolean validaPagamentoCheque(Cliente cliente) {
+        if (cliente.getSerasaOuSpc()){
+            System.out.print("Cliente não aprovado para pagamento em cheque");
+            return false;
+        }
+        return true;
+    }
     public int getParcelamento() {
         return parcelamento;
     }

@@ -4,9 +4,12 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Locacao {
-
+    public static List<Locacao> locacoes = new LinkedList<>();
     private String dataLocacao;
     private String dataDevolucao;
     private double quilometragemLocacao;
@@ -27,6 +30,7 @@ public class Locacao {
         this.motorista.setDisponibilidadeMotorista(false);
         this.automovel.setDisponibilidade(false);
         this.devolvido = false;
+        locacoes.add(this);
 
     }
 
@@ -89,19 +93,19 @@ public class Locacao {
         }
         return true;
     }
-
-    public static void verificarMotorista(Cliente cliente, Automovel automovel) {
-        if (cliente.getUltimoMotorista() != null) {
-            Motorista m = cliente.getUltimoMotorista();
-            if (!(verificarHabilitacao(automovel.getTipo() + "", m.getHabilitacao()))) {
-                System.out.print("Habilitação inválida, procure outro motorista");
-                //listar todos os motoristas e pegar o de maior tempo
-                //Motorista.listarTodos();
-            }
-        } else {
-            System.out.print("Sem ultimo motorista");
-            //Motorista.listarTodos();
+    public static boolean verificaDisponibilidadeMotorista(Motorista motorista) {
+        if (!motorista.getDisponibilidadeMotorista()) {
+            System.out.println("Motorista nào disponivel");
+            return false;
         }
+        return true;
+    }
+    public static boolean verificaDisponibilidadeAutomovel(Automovel automovel) {
+        if (!automovel.getDisponibilidade()) {
+            System.out.println("Automovel não disponivel");
+            return false;
+        }
+        return true;
     }
 
     public static boolean verificarHabilitacao(Automovel automovel, Motorista motorista) {
@@ -130,9 +134,21 @@ public class Locacao {
         this.motorista.setDisponibilidadeMotorista(true);
         this.automovel.setDisponibilidade(true);
         this.devolvido = true;
-        this.dataDevolucao = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         this.quilometragemDevolucao = kmFinal;
         automovel.setQuilometragem(kmFinal);
     }
 
+    @Override
+    public String toString() {
+        return "Locacao{" +
+                "dataLocacao='" + dataLocacao + '\'' +
+                ", dataDevolucao='" + dataDevolucao + '\'' +
+                ", quilometragemLocacao=" + quilometragemLocacao +
+                ", quilometragemDevolucao=" + quilometragemDevolucao +
+                ", cliente=" + cliente.toString() +
+                ", motorista=" + motorista.toString() +
+                ", automovel=" + automovel.toString() +
+                ", devolvido=" + devolvido +
+                '}';
+    }
 }

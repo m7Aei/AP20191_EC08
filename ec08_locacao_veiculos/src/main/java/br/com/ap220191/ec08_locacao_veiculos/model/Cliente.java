@@ -3,14 +3,19 @@ package br.com.ap220191.ec08_locacao_veiculos.model;
 
 import br.com.ap220191.ec08_locacao_veiculos.model.dao.ClienteDAO;
 
-public class Cliente extends ClienteDAO {
+import java.util.LinkedList;
+import java.util.List;
+
+public class Cliente {
+    public static List<Cliente> clientes = new LinkedList<>();
 
     private String nome;
     private String cpf;
     private boolean inadimplente = false;
-    private boolean serasa = false;
+    private boolean serasaOuSpc = false;
     private Motorista ultimoMotorista;
     private String ultimaLocacaoData;
+
     private String usuario;
     private String senha;
 
@@ -23,12 +28,10 @@ public class Cliente extends ClienteDAO {
         this.ultimaLocacaoData = ultimaLocacaoData;
     }
 
-    public Cliente() {
-    }
-
     public Cliente(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
+        clientes.add(this);
     }
 
     public Motorista getUltimoMotorista() {
@@ -80,11 +83,19 @@ public class Cliente extends ClienteDAO {
         this.inadimplente = inadimplente;
     }
 
-    public boolean getSerasa() {
-        return serasa;
+    public boolean getSerasaOuSpc() {
+        return serasaOuSpc;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                '}';
     }
 
     public void setSerasa(boolean serasa) {
-        this.serasa = serasa;
+        this.serasaOuSpc = serasa;
     }
 }
