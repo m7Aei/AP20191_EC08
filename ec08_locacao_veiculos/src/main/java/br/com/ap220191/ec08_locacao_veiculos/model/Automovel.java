@@ -1,12 +1,14 @@
 package br.com.ap220191.ec08_locacao_veiculos.model;
 
+import br.com.ap220191.ec08_locacao_veiculos.model.dao.AutomovelDAO;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
 @Table
-public class Automovel {
+public class Automovel extends AutomovelDAO {
     @Column
     private String placa;
     @Column
