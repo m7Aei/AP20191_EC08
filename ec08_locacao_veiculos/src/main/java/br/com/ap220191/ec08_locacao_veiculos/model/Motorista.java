@@ -3,15 +3,21 @@ import java.util.List;
 
 public class Motorista {
     private String nome, matricula;
-    private char habilitacao;
-    private int tempoEmpresa;
-
-    public Motorista(String nome, String matricula, char habilitacao, int tempoEmpresa) {
+    private String habilitacao;
+    private String tempoEmpresa;
+    private String disponibilidadeMotorista;
+    
+    public Motorista(String nome, String matricula, String habilitacao, String tempoEmpresa, String disponibilidade) {
         this.nome = nome;
         this.matricula = matricula;
         this.habilitacao = habilitacao;
         this.tempoEmpresa = tempoEmpresa;
+        this.disponibilidadeMotorista = disponibilidade;
     }
+
+    public Motorista() {
+    }
+    
 
     public String getNome() {
         return nome;
@@ -25,23 +31,31 @@ public class Motorista {
         return matricula;
     }
 
+    public String getDisponibilidadeMotorista() {
+        return disponibilidadeMotorista;
+    }
+
+    public void setDisponibilidadeMotorista(String disponibilidadeMotorista) {
+        this.disponibilidadeMotorista = disponibilidadeMotorista;
+    }
+
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
 
-    public char getHabilitacao() {
+    public String getHabilitacao() {
         return habilitacao;
     }
 
-    public void setHabilitacao(char habilitacao) {
+    public void setHabilitacao(String habilitacao) {
         this.habilitacao = habilitacao;
     }
 
-    public int getTempoEmpresa() {
+    public String getTempoEmpresa() {
         return tempoEmpresa;
     }
 
-    public void setTempoEmpresa(int tempoEmpresa) {
+    public void setTempoEmpresa(String tempoEmpresa) {
         this.tempoEmpresa = tempoEmpresa;
     }
 

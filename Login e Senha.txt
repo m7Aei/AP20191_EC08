@@ -1,0 +1,7 @@
+Administrador:
+login = admin
+senha = 1234
+
+Cliente:
+login = joãozinho
+senha = 12345

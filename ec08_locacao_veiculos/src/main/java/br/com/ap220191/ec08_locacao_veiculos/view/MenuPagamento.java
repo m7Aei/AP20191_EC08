@@ -5,18 +5,29 @@
  */
 package br.com.ap220191.ec08_locacao_veiculos.view;
 
+import br.com.ap220191.ec08_locacao_veiculos.controller.MenuBuscarClienteController;
+import br.com.ap220191.ec08_locacao_veiculos.controller.MenuPagamentoController;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
 /**
  *
  * @author gattc
  */
 public class MenuPagamento extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuPagamento
-     */
+    private final MenuPagamentoController controller;
+
     public MenuPagamento() {
         initComponents();
         setLocationRelativeTo(null);
+        controller = new MenuPagamentoController(this);
     }
 
     /**
@@ -43,6 +54,8 @@ public class MenuPagamento extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         confirmarPagamento = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jTextFieldQuilometragemRodada = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -71,10 +84,15 @@ public class MenuPagamento extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextFieldCpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldCpfActionPerformed(evt);
+            }
+        });
         getContentPane().add(jFormattedTextFieldCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 110, 30));
 
         jComboBoxFormaPagamento.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jComboBoxFormaPagamento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dinheiro", "Cartão de crédito", "Cartão de débito", "Cheque", " " }));
+        jComboBoxFormaPagamento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dinheiro", "Cartão de crédito", "Cartão de débito", "Cheque" }));
         jComboBoxFormaPagamento.setToolTipText("");
         jComboBoxFormaPagamento.setAlignmentX(0.0F);
         jComboBoxFormaPagamento.setAlignmentY(0.0F);
@@ -122,25 +140,35 @@ public class MenuPagamento extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/btg-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95749.png"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, -1, 100));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, -1, 100));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/shoppaymentorderbuy-23_icon-icons.com_73884.png"))); // NOI18N
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, -1, 100));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, -1, 100));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/businesspaymentcard_paymentcard_visa_negocio_pag_2339.png"))); // NOI18N
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, -1, 70));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, 70));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/paypal-inverted_82042.png"))); // NOI18N
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, 70));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, 70));
 
         confirmarPagamento.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         confirmarPagamento.setText("Confirmar Pagamento");
-        jPanel2.add(confirmarPagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, -1));
+        confirmarPagamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmarPagamentoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(confirmarPagamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Mastercard_icon-icons.com_60554 (1).png"))); // NOI18N
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, 70));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, -1, 70));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 640, 310));
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel10.setText("Digite a quilometragem rodada: ");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        jPanel2.add(jTextFieldQuilometragemRodada, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 140, 30));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 640, 370));
 
         pack();
         setLocationRelativeTo(null);
@@ -153,6 +181,29 @@ public class MenuPagamento extends javax.swing.JFrame {
     private void jComboBoxParcelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxParcelaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxParcelaActionPerformed
+
+    private void confirmarPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarPagamentoActionPerformed
+
+        if(jFormattedTextFieldCpf.getText().equals("   .   .   -  ") || jTextFieldQuilometragemRodada.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Preencha todos os dados");
+        }else{
+        try {
+            
+            try {
+                JOptionPane.showMessageDialog(null, "O valor total será: R$ "+controller.calcularValor() +" \n O cliente pagará em: "+jComboBoxParcela.getSelectedItem().toString() +" no "+jComboBoxFormaPagamento.getSelectedItem().toString());
+                this.dispose();
+            } catch (ParseException ex) {
+                JOptionPane.showMessageDialog(null, "Dados inválidos");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Dados inválidos");
+        } 
+        }
+    }//GEN-LAST:event_confirmarPagamentoActionPerformed
+
+    private void jFormattedTextFieldCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldCpfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldCpfActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,12 +240,46 @@ public class MenuPagamento extends javax.swing.JFrame {
         });
     }
 
+    public JComboBox getjComboBoxFormaPagamento() {
+        return jComboBoxFormaPagamento;
+    }
+
+    public void setjComboBoxFormaPagamento(JComboBox jComboBoxFormaPagamento) {
+        this.jComboBoxFormaPagamento = jComboBoxFormaPagamento;
+    }
+
+    public JComboBox getjComboBoxParcela() {
+        return jComboBoxParcela;
+    }
+
+    public void setjComboBoxParcela(JComboBox jComboBoxParcela) {
+        this.jComboBoxParcela = jComboBoxParcela;
+    }
+
+    public JFormattedTextField getjFormattedTextFieldCpf() {
+        return jFormattedTextFieldCpf;
+    }
+
+    public void setjFormattedTextFieldCpf(JFormattedTextField jFormattedTextFieldCpf) {
+        this.jFormattedTextFieldCpf = jFormattedTextFieldCpf;
+    }
+
+    public JTextField getjTextFieldQuilometragemRodada() {
+        return jTextFieldQuilometragemRodada;
+    }
+
+    public void setjTextFieldQuilometragemRodada(JTextField jTextFieldQuilometragemRodada) {
+        this.jTextFieldQuilometragemRodada = jTextFieldQuilometragemRodada;
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton confirmarPagamento;
     private javax.swing.JComboBox jComboBoxFormaPagamento;
     private javax.swing.JComboBox jComboBoxParcela;
     private javax.swing.JFormattedTextField jFormattedTextFieldCpf;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -205,5 +290,6 @@ public class MenuPagamento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField jTextFieldQuilometragemRodada;
     // End of variables declaration//GEN-END:variables
 }

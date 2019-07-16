@@ -5,10 +5,19 @@
  */
 package br.com.ap220191.ec08_locacao_veiculos.controller;
 
+import br.com.ap220191.ec08_locacao_veiculos.view.MenuAdministrador;
+
 /**
  *
  * @author T-Gamer
  */
 public class MenuAdministradorController {
+    private MenuAdministrador view;
+
+    public MenuAdministradorController(MenuAdministrador view) {
+        this.view = view;
+    }
+    
+  
     
 }

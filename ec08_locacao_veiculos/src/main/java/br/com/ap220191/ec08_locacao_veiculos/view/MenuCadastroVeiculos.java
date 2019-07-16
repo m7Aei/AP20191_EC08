@@ -5,17 +5,22 @@
  */
 package br.com.ap220191.ec08_locacao_veiculos.view;
 
+import br.com.ap220191.ec08_locacao_veiculos.controller.MenuCadastroAutomovelController;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
 /**
  *
  * @author gattc
  */
 public class MenuCadastroVeiculos extends javax.swing.JFrame {
+    private final MenuCadastroAutomovelController controller;
 
-    /**
-     * Creates new form MenuCadastroVeiculos
-     */
+
     public MenuCadastroVeiculos() {
         initComponents();
+        controller = new MenuCadastroAutomovelController(this);
     }
 
     /**
@@ -29,10 +34,8 @@ public class MenuCadastroVeiculos extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextFieldNomeCliente = new javax.swing.JTextField();
+        jTextFieldPlaca = new javax.swing.JTextField();
         jButtonCadastroCliente = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTableClientes = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jComboBoxTipoVeículo = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
@@ -49,46 +52,16 @@ public class MenuCadastroVeiculos extends javax.swing.JFrame {
 
         jButtonCadastroCliente.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButtonCadastroCliente.setText("Confirmar cadastro");
-
-        jTableClientes.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Placa", "Tipo"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+        jButtonCadastroCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadastroClienteActionPerformed(evt);
             }
         });
-        jTableClientes.setFocusable(false);
-        jScrollPane2.setViewportView(jTableClientes);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setText("Tipo de veículo");
 
-        jComboBoxTipoVeículo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Automóvel simples", "Automóvel utilitário", "Automóvel de luxo", "Automóvel super-luxo" }));
+        jComboBoxTipoVeículo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Moto", "Simples", "Luxo", "Super-Luxo", "Utilitário" }));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/ExecutiveCar_Black_icon-icons.com_54904.png"))); // NOI18N
 
@@ -97,20 +70,16 @@ public class MenuCadastroVeiculos extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(jButtonCadastroCliente)
-                        .addGap(0, 149, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(158, 158, 158)
+                .addComponent(jButtonCadastroCliente)
+                .addContainerGap(159, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextFieldNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextFieldPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -126,7 +95,7 @@ public class MenuCadastroVeiculos extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
                         .addGap(27, 27, 27)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -137,12 +106,10 @@ public class MenuCadastroVeiculos extends javax.swing.JFrame {
                         .addComponent(jLabel4)))
                 .addGap(33, 33, 33)
                 .addComponent(jButtonCadastroCliente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 112, 470, 430));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 112, 470, 220));
 
         jPanel2.setBackground(new java.awt.Color(27, 187, 125));
 
@@ -171,6 +138,16 @@ public class MenuCadastroVeiculos extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroClienteActionPerformed
+       if(jTextFieldPlaca.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Preencha todos os dados");
+        }else{     
+        controller.salvarAutomovel();
+        this.dispose();
+        }
+
+    }//GEN-LAST:event_jButtonCadastroClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,6 +184,26 @@ public class MenuCadastroVeiculos extends javax.swing.JFrame {
         });
     }
 
+    public String getjComboBoxTipoVeículo() {
+        String tipo;
+        tipo = (String) jComboBoxTipoVeículo.getSelectedItem();
+
+        return tipo;
+    }
+
+    public void setjComboBoxTipoVeículo(JComboBox jComboBoxTipoVeículo) {
+        this.jComboBoxTipoVeículo = jComboBoxTipoVeículo;
+    }
+
+    public JTextField getjTextFieldPlaca() {
+        return jTextFieldPlaca;
+    }
+
+    public void setjTextFieldPlaca(JTextField jTextFieldPlaca) {
+        this.jTextFieldPlaca = jTextFieldPlaca;
+    }
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastroCliente;
     private javax.swing.JComboBox jComboBoxTipoVeículo;
@@ -216,8 +213,6 @@ public class MenuCadastroVeiculos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTableClientes;
-    private javax.swing.JTextField jTextFieldNomeCliente;
+    private javax.swing.JTextField jTextFieldPlaca;
     // End of variables declaration//GEN-END:variables
 }

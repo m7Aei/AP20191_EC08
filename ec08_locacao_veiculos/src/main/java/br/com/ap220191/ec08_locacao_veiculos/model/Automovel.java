@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-abstract public class Automovel {
+public class Automovel {
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     SimpleDateFormat dia = new SimpleDateFormat("dd");
     SimpleDateFormat mes = new SimpleDateFormat("MM");
@@ -14,11 +14,13 @@ abstract public class Automovel {
     
     Date data = new Date();
     private String placa;
-    private double valorDiaria, aliquota, valorQuilometragem, quilometragemInicial, quilometragemFinal;
-    private boolean disponibilidade;
-    private String dataLocacao, dataDevolucao;
+    private double valorDiaria, aliquota, valorQuilometragem;
+    private String disponibilidade;
+    private String tipo;
+    
 
-    public Automovel(String placa, double valorDiaria, double aliquota, boolean disponibilidade, double valorQuilometragem) {
+
+    public Automovel(String placa, double valorDiaria, double aliquota, String disponibilidade, double valorQuilometragem) {
         this.placa = placa;
         this.valorDiaria = valorDiaria;
         this.valorQuilometragem = valorQuilometragem;
@@ -26,12 +28,30 @@ abstract public class Automovel {
         this.disponibilidade = disponibilidade;
     }
 
+    public Automovel(String placa, String tipo) {
+        this.placa = placa;
+        this.tipo = tipo;
+    }
+
+    public Automovel() {
+    }
+    
+    
+
     public String getPlaca() {
         return placa;
     }
 
     public void setPlaca(String placa) {
         this.placa = placa;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public double getValorDiaria() {
@@ -58,44 +78,12 @@ abstract public class Automovel {
         this.valorQuilometragem = valorQuilometragem;
     }
 
-    public double getQuilometragemInicial() {
-        return quilometragemInicial;
-    }
 
-    public void setQuilometragemInicial(double quilometragemInicial) {
-        this.quilometragemInicial = quilometragemInicial;
-    }
-
-    public double getQuilometragemFinal() {
-        return quilometragemFinal;
-    }
-
-    public void setQuilometragemFinal(double quilometragemFinal) {
-        this.quilometragemFinal = quilometragemFinal;
-    }
-
-    public String getDataLocacao() {
-        return dataLocacao;
-    }
-
-    public void setDataLocacao(String dataLocacao){
-        this.dataLocacao = dataLocacao;
-    }
-
-    public String getDataDevolucao() {
-        return dataDevolucao;
-    }
-
-    public void setDataDevolucao(String dataDevolucao) {
-        this.dataDevolucao = dataDevolucao;
-    }
-    
-
-    public boolean isDisponibilidade() {
+    public String getDisponibilidade() {
         return disponibilidade;
     }
 
-    public void setDisponibilidade(boolean disponibilidade) {
+    public void setDisponibilidade(String disponibilidade) {
         this.disponibilidade = disponibilidade;
     }
 
@@ -112,41 +100,5 @@ abstract public class Automovel {
 
     }
     
-    public double calcularValor(){
-        int dias, meses, anos;
-        Date data1 = null, data2 = null;
-        try {
-             data1 = sdf.parse(getDataLocacao());
-        } catch (ParseException ex) {
-            Logger.getLogger(Automovel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-             data2 = sdf.parse(getDataDevolucao());
-        } catch (ParseException ex) {
-            Logger.getLogger(Automovel.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        int dl = Integer.parseInt(dia.format(data1));
-        int dd = Integer.parseInt(dia.format(data2));
-        int ml = Integer.parseInt(mes.format(data1));
-        int md = Integer.parseInt(mes.format(data2));
-        int al = Integer.parseInt(ano.format(data1));
-        int ad = Integer.parseInt(ano.format(data2));
-        if(dd >= dl){
-            dias = dd - dl;
-        }else{
-            dias = (30 + dd) - dl;
-            md = md--;
-        }
-        if(md >= ml){
-            meses = md - ml;
-        }else{
-            meses = (12 + md) - ml;
-            ad = ad--;
-        }
-        anos = ad - al;
-        int diasTotais = (360 * anos) + (12 * meses) + dias;
-        
-        return (diasTotais * getValorDiaria()) + (getQuilometragemFinal() - getQuilometragemInicial())*getValorQuilometragem();
-        
-    }
+    
 }

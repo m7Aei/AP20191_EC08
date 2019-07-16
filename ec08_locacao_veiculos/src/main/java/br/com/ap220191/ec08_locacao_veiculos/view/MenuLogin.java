@@ -5,9 +5,11 @@
  */
 package br.com.ap220191.ec08_locacao_veiculos.view;
 
+import br.com.ap220191.ec08_locacao_veiculos.controller.MenuLoginController;
 import br.com.ap220191.ec08_locacao_veiculos.util.JPassWordFieldHint;
 import java.awt.Color;
 import java.awt.Point;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPasswordField;
@@ -19,10 +21,12 @@ import javax.swing.JTextField;
  */
 public class MenuLogin extends javax.swing.JFrame {
 
+    private final MenuLoginController controller;
     private Point point = new Point();
 
     public MenuLogin() {
         initComponents();
+        controller = new MenuLoginController(this);
         setLocationRelativeTo(null);
     }
 
@@ -45,7 +49,6 @@ public class MenuLogin extends javax.swing.JFrame {
         ;
         BtnEntrar = new javax.swing.JButton();
         BtnSair = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 410));
@@ -139,8 +142,6 @@ public class MenuLogin extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/HotWheels.jpg"))); // NOI18N
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -155,8 +156,7 @@ public class MenuLogin extends javax.swing.JFrame {
                     .addComponent(nomeUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(senhaUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BtnEntrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnSair, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(BtnSair, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -172,9 +172,7 @@ public class MenuLogin extends javax.swing.JFrame {
                 .addComponent(BtnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -238,7 +236,14 @@ public class MenuLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_formMouseDragged
 
     private void BtnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEntrarActionPerformed
+
+     
         
+        try {
+            controller.autenticarUsuario();
+        } catch (SQLException ex) {
+            Logger.getLogger(MenuLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Point p = this.getLocation();
         MenuLogin login = this;
         new Thread() {
@@ -255,20 +260,11 @@ public class MenuLogin extends javax.swing.JFrame {
                 }
             }
         }.start();
-        if (nomeUsuario.getText().equals("admin") && senhaUsuario.getText().equals("1234")){
-            new MenuAdministrador().setVisible(true); 
-            login.dispose();
-            
-        } else if (nomeUsuario.getText().equals("cliente") && senhaUsuario.getText().equals("12345")){
-            new MenuCliente().setVisible(true); 
-            login.dispose();
-        }
         
+        
+
     }//GEN-LAST:event_BtnEntrarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
 
         try {
@@ -287,23 +283,21 @@ public class MenuLogin extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MenuLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MenuLogin().setVisible(true);
             }
         });
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnEntrar;
     private javax.swing.JButton BtnSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField nomeUsuario;

@@ -97,16 +97,6 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="jButtonConsultarLocacao">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Consultar loca&#xe7;&#xf5;es"/>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="50" y="170" width="140" height="-1"/>
-            </Constraint>
-          </Constraints>
-        </Component>
         <Component class="javax.swing.JButton" name="jButtonRealizarLocacao">
           <Properties>
             <Property name="text" type="java.lang.String" value="Realizar loca&#xe7;&#xe3;o"/>

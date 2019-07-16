@@ -5,39 +5,33 @@
  */
 package br.com.ap220191.ec08_locacao_veiculos.model;
 
+import br.com.ap220191.ec08_locacao_veiculos.controller.MenuLocacaoController;
+import br.com.ap220191.ec08_locacao_veiculos.view.MenuLocacao;
+import java.sql.SQLException;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author T-Gamer
  */
 public class Main {
-    public static void main(String[] args) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        SimpleDateFormat dia = new SimpleDateFormat("dd");
-        SimpleDateFormat mes = new SimpleDateFormat("MM");
-        SimpleDateFormat ano = new SimpleDateFormat("yyyy");
-        String d = "21/05/2015";
-           Date c = null;
-           Date a = null;
-        try {
-            c = sdf.parse(d);
-            
-        } catch (ParseException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            a = sdf.parse(d);
-            
-            
-        } catch (ParseException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        String o = dia.format(a);
-        System.out.println(o);
-    }
+    private MenuLocacaoController controller;
+    private MenuLocacao view;
+    
+    public static void main(String[] args) throws SQLException {
+        
+        
+    DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    Date date = new Date();
+    String dataAtualString = dateFormat.format(date);
+    System.out.println(dataAtualString.replace("/", ""));
+    
+   
+}
 }

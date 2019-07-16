@@ -116,7 +116,6 @@
                       <Component id="senhaUsuario" alignment="1" min="-2" pref="360" max="-2" attributes="0"/>
                       <Component id="BtnEntrar" alignment="1" min="-2" pref="360" max="-2" attributes="0"/>
                       <Component id="BtnSair" alignment="1" min="-2" pref="360" max="-2" attributes="0"/>
-                      <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -135,9 +134,7 @@
                   <Component id="BtnEntrar" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="BtnSair" min="-2" pref="40" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel3" min="-2" pref="38" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="55" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -220,13 +217,6 @@
             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BtnSairMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnSairActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icons/HotWheels.jpg"/>
-            </Property>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
