@@ -1,33 +1,21 @@
 # AP20191_EC08
 Repositório criado para a manutenção do controle de versão dos artefatos necessários à implementação do estudo de caso 08 da disciplina Algoritmos e Programação 2.
 
-# Tutorial GIT
+Caro Professor,
+Existem duas versões do trabalho final. Uma está no master e outra na NewBranch. Para avaliacão deve ser considerada apenas a do master, deixamos a outra apenas para mostrar um pouco do processo até chegar ao resultado final. 
 
- git clone https://github.com/gilmarioArantes/AP20191_EC08.git
+## Para abrir o Banco de Dados 
 
- cd AP20191_EC08
+1°   Porta: 5432
+       Nome : postgres
+       Senha : 0207
 
-## Fazendo alterações 
+2° Abra o postgresql e crie uma nova Datebase com o nome "locacaoveiculos"
 
- git add . 
-  (adiciona todos os arquivos) 
+3° Dê um restore  utilazando o arquivo "backuploc"
 
- git commit -m "nome da sua alteraçao"
-  (menssagem descrevendo o que foi alterado no código) 
-  
- git push 
-   (envia as alterações) 
-   
-   
-## Para atualizar o projeto
 
-git pull 
-  (toda vez que inicializar o projeto, puxe as alterações que os outros fizeram) 
-  
-  
-## Para registrar dúvidas, erros e sugestões 
 
-Issues
 
   
   
