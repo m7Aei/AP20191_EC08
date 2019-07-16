@@ -26,7 +26,7 @@ public class Main {
 
         Motorista motorista = new Motorista();
         motorista.setNome("natalinda amorDaMinha vida");
-        motorista.salvar(sessionFactory);
+//        motorista
         Motorista motoristaDoBanco = Motorista.buscarPorNome(sessionFactory, "natalinda amorDaMinha vida");
 
         System.out.println("Nome do Motorista Do Banco:" + motoristaDoBanco.getNome());

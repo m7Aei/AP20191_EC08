@@ -133,10 +133,10 @@ public class Locacao {
                 return false;
             }
         }
-        if(habilitacao=="A"){
-            if
-        }
-        
+//        if(habilitacao=="A"){
+//            if
+//        }
+//
         return false;
     }
     

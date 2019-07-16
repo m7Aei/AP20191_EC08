@@ -19,11 +19,9 @@ public class MenuCadastroMotoristas extends javax.swing.JFrame {
     /**
      * Creates new form MenuCadastroMotoristas
      */
-    private final MenuCadastroMotoristaController controller;
 
     public MenuCadastroMotoristas() {
         initComponents();
-        controller = new MenuCadastroMotoristaController(this);
     }
 
     /**

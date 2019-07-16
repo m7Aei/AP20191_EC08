@@ -14,12 +14,10 @@ import javax.swing.JTextField;
  * @author gattc
  */
 public class MenuCadastroVeiculos extends javax.swing.JFrame {
-    private final MenuCadastroAutomovelController controller;
 
 
     public MenuCadastroVeiculos() {
         initComponents();
-        controller = new MenuCadastroAutomovelController(this);
     }
 
     /**

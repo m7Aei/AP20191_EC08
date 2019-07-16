@@ -1,12 +1,25 @@
 package br.com.ap220191.ec08_locacao_veiculos.model;
-import java.util.List;
 
-public class Motorista {
-    private String nome, matricula;
+import br.com.ap220191.ec08_locacao_veiculos.model.dao.MotoristaDAO;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table
+public class Motorista extends MotoristaDAO {
+    @Column
+    private String nome;
+    @Column
+    private String matricula;
+    @Column
     private String habilitacao;
+    @Column
     private Double tempoEmpresa;
+    @Column
     private boolean disponibilidadeMotorista;
-    
+
     public Motorista(String nome, String matricula, String habilitacao, Double tempoEmpresa) {
         this.nome = nome;
         this.matricula = matricula;
@@ -17,7 +30,6 @@ public class Motorista {
 
     public Motorista() {
     }
-    
 
     public String getNome() {
         return nome;
@@ -59,24 +71,22 @@ public class Motorista {
         this.tempoEmpresa = tempoEmpresa;
     }
 
-    public void cadastrarMotorista(String nome, String matricula, char habilitacao, int tempoEmpresa){
+    public void cadastrarMotorista(String nome, String matricula, char habilitacao, int tempoEmpresa) {
         setNome(this.nome);
         setMatricula(this.matricula);
         setHabilitacao(this.habilitacao);
         setTempoEmpresa(this.tempoEmpresa);
     }
 
-    public void removerMotorista(){
+    public void removerMotorista() {
 
     }
 
-    public void editarMotorista(){
+    public void editarMotorista() {
 
     }
 
-    public boolean verificarHabilitacao(TipoAutomovel tipo, Motorista motorista){
-        
-        
-        return false;
+    public char verificarHabilitacao() {
+        return ' ';
     }
 }
