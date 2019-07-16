@@ -1,4 +1,5 @@
 package br.com.ap220191.ec08_locacao_veiculos.model;
+import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -33,10 +34,16 @@ public class LocacaoTest {
     }
 
     @Test
-    @Ignore
     public void TestaDevolucaoBemSucedida() {
-        String dataLoc, dataDev;
-        dataLoc="12/05/2019";
-        dataDev="20/06/2019";
+        Motorista motorista = new Motorista("José", "5437A", "D", 5.0);
+        Cliente cliente = new Cliente("João", "12345678910");
+        Automovel automovel = new Automovel("123ABC", true, TipoAutomovel.UTILITARIO);
+        automovel.setQuilometragem(120000.);
+        Locacao loc = new Locacao("12/05/2019","20/06/2019", cliente, motorista, automovel);
+        loc.realizarDevolucao(130000.);
+
+        assert motorista.getDisponibilidadeMotorista();
+        assert automovel.getDisponibilidade();
+        loc.foiDevolvido();
     }
 }

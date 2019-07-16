@@ -2,34 +2,18 @@ package br.com.ap220191.ec08_locacao_veiculos.model;
 
 
 import br.com.ap220191.ec08_locacao_veiculos.model.dao.ClienteDAO;
-import java.util.Date;
 
-import javax.persistence.*;
-
-@Entity
-@Table
 public class Cliente extends ClienteDAO {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    @Column
+
     private String nome;
-    @Column
     private String cpf;
-    @Column
     private boolean inadimplente = false;
-    @Column
     private boolean serasa = false;
-    @Transient
     private Motorista ultimoMotorista;
-    @Transient
-    private String ultimaLocacaoData; 
-    @Column
+    private String ultimaLocacaoData;
     private String usuario;
-    @Column
     private String senha;
-    @Column
-    private Integer idUltimoMotorista;
+
 
     public String getUltimaLocacaoData() {
         return ultimaLocacaoData;
@@ -39,13 +23,12 @@ public class Cliente extends ClienteDAO {
         this.ultimaLocacaoData = ultimaLocacaoData;
     }
 
-    
     public Cliente() {
     }
 
     public Cliente(String nome, String cpf) {
-        this.nome = usuario;
-        this.cpf = senha;
+        this.nome = nome;
+        this.cpf = cpf;
     }
 
     public Motorista getUltimoMotorista() {

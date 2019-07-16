@@ -34,7 +34,6 @@ public class Automovel extends AutomovelDAO {
     public void setQuilometragem(Double quilometragem) {
         this.quilometragem = quilometragem;
     }
-
     
     public TipoAutomovel getTipo() {
         return tipo;
@@ -54,7 +53,7 @@ public class Automovel extends AutomovelDAO {
 
    
 
-    public boolean isDisponibilidade() {
+    public boolean getDisponibilidade() {
         return disponibilidade;
     }
 
