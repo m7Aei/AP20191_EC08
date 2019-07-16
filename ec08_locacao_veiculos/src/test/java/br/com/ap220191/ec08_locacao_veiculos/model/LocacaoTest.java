@@ -1,0 +1,42 @@
+package br.com.ap220191.ec08_locacao_veiculos.model;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+public class LocacaoTest {
+
+    @Test
+    public void TestaVerificacaoInadimplencia() {
+        Cliente cliente = new Cliente("João", "12345678910");
+        Locacao.verificaInadinplencia(cliente);
+    }
+    @Test
+    public void TestaHabilitacaoMotorista() {
+
+    }
+
+    @Test
+    public void TestaLocacaoBemSucedida() {
+        String dataLoc, dataDev;
+        dataLoc="12/05/2019";
+        dataDev="20/06/2019";
+
+        Motorista motorista = new Motorista("José", "5437A", "D", 5.0);
+        Cliente cliente = new Cliente("João", "12345678910");
+        Automovel a1 = new Automovel("123ABC", true, TipoAutomovel.UTILITARIO);
+        a1.setQuilometragem(120000.);
+        Locacao.verificaInadinplencia(cliente);
+        Locacao.verificarHabilitacao(a1,motorista);
+        Locacao loc = new Locacao(dataLoc,dataDev, cliente, motorista, a1);
+        assertEquals(39,loc.calcularData(),0.1);
+        assertEquals(120000.,loc.getQuilometragemLocacao(),0.1);
+    }
+
+    @Test
+    @Ignore
+    public void TestaDevolucaoBemSucedida() {
+        String dataLoc, dataDev;
+        dataLoc="12/05/2019";
+        dataDev="20/06/2019";
+    }
+}

@@ -20,18 +20,14 @@ public class Locacao {
     private Automovel automovel;
     private boolean status;
 
-    private String nomeMotorista;
-
-    Date data = new Date();
-
-    public Locacao(String dataLocacao, String dataDevolucao, double quilometragemLocacao, Cliente cliente, Motorista motorista, Automovel automovel, boolean status) {
+    public Locacao(String dataLocacao, String dataDevolucao, Cliente cliente, Motorista motorista, Automovel automovel) {
         this.dataLocacao = dataLocacao;
         this.dataDevolucao = dataDevolucao;
-        this.quilometragemLocacao = quilometragemLocacao;
         this.cliente = cliente;
         this.motorista = motorista;
         this.automovel = automovel;
-        this.status = status;
+        this.quilometragemLocacao = automovel.getQuilometragem();
+        this.status = false;
     }
 
     public String getDataLocacao() {
@@ -105,21 +101,7 @@ public class Locacao {
         return (int) inicio.until(fim, ChronoUnit.DAYS);
     }
 
-    public boolean realizarLocacao(Cliente cliente, Automovel automovel) {
-        //pegar entrada de datas
-        //pegar valor de tipo do carro 
-
-        String dataLoc, dataDev;
-        dataLoc = "12/05/2019";
-        dataDev = "20/06/2019";
-
-        verificarMotorista(cliente, automovel);
-            
-        if(!verificaInadinplencia(cliente))
-            return false; 
-        setQuilometragemLocacao(automovel.getQuilometragem());
-        setStatus(true);
-        return true; 
+    public void realizarLocacao(Cliente cliente, Automovel automovel) {
     }
 
     public static boolean verificaInadinplencia(Cliente cliente) {
@@ -144,34 +126,39 @@ public class Locacao {
         }
     }
 
-    public static boolean verificarHabilitacao(String tipo, String habilitacao) {
+    public static boolean verificarHabilitacao(Automovel automovel,Motorista motorista){
+        String tipoCarro = automovel.getTipo().toString();
+        String habilitacaoMotorista = motorista.getHabilitacao();
+        return verificarHabilitacao(tipoCarro,habilitacaoMotorista);
+    }
 
-        if (tipo.equalsIgnoreCase("UTILITARIO")) {
+    public static boolean verificarHabilitacao(String tipoCarro, String habilitacaoMotorista) {
+        if (tipoCarro.equalsIgnoreCase("UTILITARIO")) {
 
-            if ((!(habilitacao.equalsIgnoreCase("C"))) && (!(habilitacao.equalsIgnoreCase("D")))) {
+            if ((!(habilitacaoMotorista.equalsIgnoreCase("C"))) && (!(habilitacaoMotorista.equalsIgnoreCase("D")))) {
 
                 return false;
             }
         }
-        if (habilitacao.equalsIgnoreCase("A")) {
+        if (habilitacaoMotorista.equalsIgnoreCase("A")) {
             return false;
         } else {
             return true;
         }
 
     }
-    
+
     public boolean realizarDevolucao(Double kmFinal){
-        Double KmTotal; 
-        //Quantos km foram rodados? 
-        
+        Double KmTotal;
+        //Quantos km foram rodados?
+
         setQuilometragemDevolucao(kmFinal);
         automovel.setQuilometragem(kmFinal);
-        
-        Pagamento.calcularPreco(calcularData(),this); 
-        
-        
-        
+
+        Pagamento.calcularPreco(calcularData(),this);
+
+
+
         return true;
     }
 

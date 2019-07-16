@@ -20,22 +20,16 @@ public class MainTeste {
     public static void main(String args[]){
         String dataLoc, dataDev; 
         dataLoc="12/05/2019"; 
-        dataDev="20/06/2019"; 
-        
-        String tipoVeiculo = "LUXO"; //pegar valor no select 
-        
+        dataDev="20/06/2019";
+
         Motorista motorista = new Motorista("José", "5437A", "D", 5.0);
-        
-        Cliente cliente = new Cliente("João", "12345678910", false, false, motorista);
-        
+        Cliente cliente = new Cliente("João", "12345678910");
         Automovel a1 = new Automovel("123ABC", true, TipoAutomovel.UTILITARIO);
-        
-        
-        Locacao loc = new Locacao(dataLoc,dataDev , 120.0, cliente, motorista, a1, true);
-        
-        loc.realizarLocacao(cliente, a1);
-        loc.realizarDevolucao(200.0); //km final do carro
-        System.out.println(loc.calcularData());
+        a1.setQuilometragem(120000.);
+        Locacao.verificaInadinplencia(cliente);
+        Locacao.verificarHabilitacao(a1,motorista);
+        Locacao loc = new Locacao(dataLoc,dataDev, cliente, motorista, a1);
+        System.out.println("tempo locado: "+loc.calcularData()+"Quilometragem Inicial: "+loc.getQuilometragemLocacao());
         //System.out.println(a1.getTipo().getAliquota());
                        
     }

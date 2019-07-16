@@ -17,9 +17,9 @@ public class Cliente extends ClienteDAO {
     @Column
     private String cpf;
     @Column
-    private boolean inadimplente;
+    private boolean inadimplente = false;
     @Column
-    private boolean serasa;
+    private boolean serasa = false;
     @Transient
     private Motorista ultimoMotorista;
     @Transient
@@ -31,22 +31,12 @@ public class Cliente extends ClienteDAO {
     @Column
     private Integer idUltimoMotorista;
 
-    public Cliente(String nome, String cpf, boolean inadimplente, boolean serasa) {
-        this.id = id;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.inadimplente = inadimplente;
-        this.serasa = serasa;
+    public Cliente() {
     }
 
-
-    public Cliente(String nome, String usuario, String senha, String cpf, boolean inadimplente, boolean serasa) {
-        this.nome = nome;
-        this.usuario = usuario;
-        this.senha = senha;
-        this.cpf = cpf;
-        this.inadimplente = inadimplente;
-        this.serasa = serasa;
+    public Cliente(String nome, String cpf) {
+        this.nome = usuario;
+        this.cpf = senha;
     }
 
     public Motorista getUltimoMotorista() {
@@ -58,19 +48,6 @@ public class Cliente extends ClienteDAO {
     }
 
 
-
-    public Cliente(String nome, String cpf, boolean inadimplente, boolean serasa, Motorista ultimoMotorista) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.inadimplente = inadimplente;
-        this.serasa = serasa;
-        this.ultimoMotorista = ultimoMotorista;
-    }
-
-    public Cliente(String usuario, String senha) {
-        this.usuario = usuario;
-        this.senha = senha;
-    }
     public String getNome() {
         return nome;
     }
