@@ -15,10 +15,20 @@ public class Pagamento extends PagamentoDAO {
 
 	@Column
 	private float valor;
+        
+        public static Double calcularPreco(int dias, Locacao locacao){
+           Double kmTotal = (kmFinal-kmInicio);
+           Double valorTotal = (kmTotal*7)+(dias*30);
+           
+           valorTotal= valorTotal + (valorTotal*(automovel.getTipo().getAliquota())/100);
+            return valorTotal; 
+
+            
+        }
 	
-//	public void efetuarPagamento() {
-//
-//	}
+	public void efetuarPagamento() {
+
+	}
 //	public void consultarSerasa() {
 //
 //	}

@@ -2,6 +2,7 @@ package br.com.ap220191.ec08_locacao_veiculos.model;
 
 
 import br.com.ap220191.ec08_locacao_veiculos.model.dao.ClienteDAO;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -21,6 +22,8 @@ public class Cliente extends ClienteDAO {
     private boolean serasa;
     @Transient
     private Motorista ultimoMotorista;
+    @Transient
+    private Date ultimaLocacao; 
     @Column
     private String usuario;
     @Column

@@ -34,6 +34,7 @@ public class MainTeste {
         Locacao loc = new Locacao(dataLoc,dataDev , 120.0, cliente, motorista, a1, true);
         
         loc.realizarLocacao(cliente, a1);
+        loc.realizarDevolucao(200.0); //km final do carro
         System.out.println(loc.calcularData());
         //System.out.println(a1.getTipo().getAliquota());
                        

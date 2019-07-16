@@ -118,6 +118,7 @@ public class Locacao {
         if(!verificaInadinplencia(cliente))
             return false; 
         setQuilometragemLocacao(automovel.getQuilometragem());
+        setStatus(true);
         return true; 
     }
 
@@ -158,6 +159,20 @@ public class Locacao {
             return true;
         }
 
+    }
+    
+    public boolean realizarDevolucao(Double kmFinal){
+        Double KmTotal; 
+        //Quantos km foram rodados? 
+        
+        setQuilometragemDevolucao(kmFinal);
+        automovel.setQuilometragem(kmFinal);
+        
+        Pagamento.calcularPreco(calcularData(),this); 
+        
+        
+        
+        return true;
     }
 
 }
