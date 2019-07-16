@@ -17,7 +17,7 @@ public class Locacao {
     private Motorista motorista;
     private Automovel automovel;
     private boolean status;
-<<<<<<< HEAD
+
     
     
 
@@ -34,17 +34,9 @@ public class Locacao {
  
     
    
-    
-=======
+
     private String nomeMotorista;
 
-
-
->>>>>>> 64365f6fa1e4cbd44f28505aca283eb848e4b1f6
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-    SimpleDateFormat dia = new SimpleDateFormat("dd");
-    SimpleDateFormat mes = new SimpleDateFormat("MM");
-    SimpleDateFormat ano = new SimpleDateFormat("yyyy");
 
     Date data = new Date();
 
@@ -119,7 +111,33 @@ public class Locacao {
      return (int) inicio.until(fim, ChronoUnit.DAYS);
     }
 
-    public Locacao() {
+    public void realizarLocacao(Cliente cliente, Automovel automovel){
+        //pegar entrada de datas 
+        //pegar valor de tipo do carro 
+        
+        String dataLoc, dataDev; 
+        dataLoc="12/05/2019"; 
+        dataDev="20/06/2019";
+        
+       
+        if(cliente.getUltimoMotorista()!=null){
+            Motorista m = cliente.getUltimoMotorista();
+            verificarHabilitacao(automovel.getTipo()+ "", m.getHabilitacao());
+        }
+       
+    }
+     public static boolean verificarHabilitacao(String tipo, String habilitacao){
+        
+        if(tipo=="UTILITARIO"){  
+            if((habilitacao!="C")&&(habilitacao!="D")){
+                return false;
+            }
+        }
+        if(habilitacao=="A"){
+            if
+        }
+        
+        return false;
     }
     
   

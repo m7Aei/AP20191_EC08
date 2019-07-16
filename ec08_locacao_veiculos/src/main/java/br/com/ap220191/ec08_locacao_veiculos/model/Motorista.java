@@ -74,7 +74,9 @@ public class Motorista {
 
     }
 
-    public char verificarHabilitacao(){
-        return ' ';
+    public boolean verificarHabilitacao(TipoAutomovel tipo, Motorista motorista){
+        
+        
+        return false;
     }
 }

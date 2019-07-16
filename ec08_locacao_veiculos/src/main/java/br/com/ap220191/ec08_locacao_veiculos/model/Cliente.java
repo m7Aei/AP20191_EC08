@@ -20,6 +20,16 @@ public class Cliente {
         this.serasa = serasa;
     }
 
+    public Motorista getUltimoMotorista() {
+        return ultimoMotorista;
+    }
+
+    public void setUltimoMotorista(Motorista ultimoMotorista) {
+        this.ultimoMotorista = ultimoMotorista;
+    }
+
+     
+
     public Cliente(String nome, String cpf, boolean inadimplente, boolean serasa, Motorista ultimoMotorista) {
         this.nome = nome;
         this.cpf = cpf;
