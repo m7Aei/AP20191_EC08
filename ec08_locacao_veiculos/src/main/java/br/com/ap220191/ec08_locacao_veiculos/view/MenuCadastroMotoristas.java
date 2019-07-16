@@ -169,7 +169,7 @@ public class MenuCadastroMotoristas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCadastroMotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroMotoristaActionPerformed
-        controller.salvarMotorista();
+      
     }//GEN-LAST:event_jButtonCadastroMotoristaActionPerformed
 
     /**

@@ -21,17 +21,6 @@ public class MenuCadastroMotoristaController {
         this.view = view;
     }
 
-    public void salvarMotorista() {
-
-        Motorista motorista = new Motorista(view.getjTextFieldNomeMotorista().getText(), view.getjTextFieldMatriculaMotorista().getText(), view.getjComboBoxTipoHabilitacao(), view.getjTextFieldTempoMotorista().getText());
-
-        try {
-            Connection conexao = new Conexao().getConnection();
-            MotoristaDAO motoristaDao = new MotoristaDAO(conexao);
-            motoristaDao.insert(motorista);
-        } catch (SQLException ex) {
-            Logger.getLogger(MenuCadastroMotoristas.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+   
 
 }
