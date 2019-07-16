@@ -6,6 +6,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 
+import java.util.List;
+
 public class MotoristaDAO  extends CRUD{
     public static Motorista buscar(SessionFactory sessionFactory, int id) {
         Session session = sessionFactory.openSession();
@@ -21,6 +23,12 @@ public class MotoristaDAO  extends CRUD{
                 .uniqueResult();
         session.close();
         return (Motorista) result;
+    }
+
+    public static List<Motorista> buscarTodosOsMotorista(SessionFactory sessionFactory) {
+        Session session = sessionFactory.openSession();
+        Criteria criteria = session.createCriteria(Motorista.class);
+        return session.createQuery("SELECT a FROM Motorista a", Motorista.class).getResultList();
     }
 
 }

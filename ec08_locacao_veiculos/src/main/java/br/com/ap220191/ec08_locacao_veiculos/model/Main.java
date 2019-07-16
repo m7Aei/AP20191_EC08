@@ -8,10 +8,8 @@ package br.com.ap220191.ec08_locacao_veiculos.model;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-/**
- *
- * @author T-Gamer
- */
+import java.util.List;
+
 public class Main {
     static final SessionFactory sessionFactory = buildSessionFactory();
     public static void main(String[] args) {
@@ -26,10 +24,14 @@ public class Main {
 
         Motorista motorista = new Motorista();
         motorista.setNome("natalinda amorDaMinha vida");
-//        motorista
+        motorista.salvar(sessionFactory);
         Motorista motoristaDoBanco = Motorista.buscarPorNome(sessionFactory, "natalinda amorDaMinha vida");
 
+        List<Motorista> motoristas = Motorista.buscarTodosOsMotorista(sessionFactory);
+
         System.out.println("Nome do Motorista Do Banco:" + motoristaDoBanco.getNome());
+
+        System.out.println("Tamanho da lista: "+motoristas.size());
 
 
     }

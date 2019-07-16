@@ -2,13 +2,14 @@ package br.com.ap220191.ec08_locacao_veiculos.model;
 
 import br.com.ap220191.ec08_locacao_veiculos.model.dao.MotoristaDAO;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
 public class Motorista extends MotoristaDAO {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     @Column
     private String nome;
     @Column

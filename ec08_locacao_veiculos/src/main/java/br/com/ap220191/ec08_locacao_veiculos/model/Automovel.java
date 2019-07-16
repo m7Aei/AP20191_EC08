@@ -2,13 +2,14 @@ package br.com.ap220191.ec08_locacao_veiculos.model;
 
 import br.com.ap220191.ec08_locacao_veiculos.model.dao.AutomovelDAO;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
 public class Automovel extends AutomovelDAO {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     @Column
     private String placa;
     @Column
@@ -21,9 +22,8 @@ public class Automovel extends AutomovelDAO {
         this.disponibilidade = disponibilidade;
         this.tipo = tipo;
     }
-    
-    
-    
+
+    public Automovel(){}
 
     public TipoAutomovel getTipo() {
         return tipo;

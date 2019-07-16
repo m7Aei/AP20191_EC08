@@ -12,5 +12,8 @@
 <!--        <property name="hbm2ddl.auto">create</property>-->
         <property name="hbm2ddl.auto">create-drop</property>
         <mapping class="br.com.ap220191.ec08_locacao_veiculos.model.Pagamento"/>
+        <mapping class="br.com.ap220191.ec08_locacao_veiculos.model.Motorista"/>
+        <mapping class="br.com.ap220191.ec08_locacao_veiculos.model.Cliente"/>
+        <mapping class="br.com.ap220191.ec08_locacao_veiculos.model.Automovel"/>
     </session-factory>
 </hibernate-configuration>

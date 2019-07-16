@@ -3,13 +3,14 @@ package br.com.ap220191.ec08_locacao_veiculos.model;
 
 import br.com.ap220191.ec08_locacao_veiculos.model.dao.ClienteDAO;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
 public class Cliente extends ClienteDAO {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     @Column
     private String nome;
     @Column
@@ -18,12 +19,14 @@ public class Cliente extends ClienteDAO {
     private boolean inadimplente;
     @Column
     private boolean serasa;
-    @Column
+    @Transient
     private Motorista ultimoMotorista;
     @Column
     private String usuario;
     @Column
     private String senha;
+    @Column
+    private Integer idUltimoMotorista;
 
 
     public Cliente(String nome, String usuario, String senha, String cpf, boolean inadimplente, boolean serasa) {
@@ -43,7 +46,7 @@ public class Cliente extends ClienteDAO {
         this.ultimoMotorista = ultimoMotorista;
     }
 
-     
+
 
     public Cliente(String nome, String cpf, boolean inadimplente, boolean serasa, Motorista ultimoMotorista) {
         this.nome = nome;
