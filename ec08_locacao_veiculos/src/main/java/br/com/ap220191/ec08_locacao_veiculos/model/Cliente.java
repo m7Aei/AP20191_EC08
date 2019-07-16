@@ -23,7 +23,7 @@ public class Cliente extends ClienteDAO {
     @Transient
     private Motorista ultimoMotorista;
     @Transient
-    private Date ultimaLocacao; 
+    private String ultimaLocacaoData; 
     @Column
     private String usuario;
     @Column
@@ -31,6 +31,15 @@ public class Cliente extends ClienteDAO {
     @Column
     private Integer idUltimoMotorista;
 
+    public String getUltimaLocacaoData() {
+        return ultimaLocacaoData;
+    }
+
+    public void setUltimaLocacaoData(String ultimaLocacaoData) {
+        this.ultimaLocacaoData = ultimaLocacaoData;
+    }
+
+    
     public Cliente() {
     }
 

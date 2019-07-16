@@ -94,10 +94,10 @@ public class Locacao {
         this.status = status;
     }
 
-    public int calcularData() {
+    public static int calcularData(String in, String fi) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate inicio = LocalDate.parse(getDataLocacao(), formatter);
-        LocalDate fim = LocalDate.parse(getDataDevolucao(), formatter);
+        LocalDate inicio = LocalDate.parse(in, formatter);
+        LocalDate fim = LocalDate.parse(fi, formatter);
         return (int) inicio.until(fim, ChronoUnit.DAYS);
     }
 
@@ -155,7 +155,7 @@ public class Locacao {
         setQuilometragemDevolucao(kmFinal);
         automovel.setQuilometragem(kmFinal);
 
-        Pagamento.calcularPreco(calcularData(),this);
+        //Pagamento.calcularPreco(calcularData(),this);
 
 
 
