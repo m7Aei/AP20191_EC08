@@ -28,6 +28,14 @@ public class Cliente extends ClienteDAO {
     @Column
     private Integer idUltimoMotorista;
 
+    public Cliente(String nome, String cpf, boolean inadimplente, boolean serasa) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.inadimplente = inadimplente;
+        this.serasa = serasa;
+    }
+
 
     public Cliente(String nome, String usuario, String senha, String cpf, boolean inadimplente, boolean serasa) {
         this.nome = nome;

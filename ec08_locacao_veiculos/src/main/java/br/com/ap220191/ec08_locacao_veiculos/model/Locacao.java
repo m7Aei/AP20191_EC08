@@ -105,7 +105,7 @@ public class Locacao {
         return (int) inicio.until(fim, ChronoUnit.DAYS);
     }
 
-    public void realizarLocacao(Cliente cliente, Automovel automovel) {
+    public boolean realizarLocacao(Cliente cliente, Automovel automovel) {
         //pegar entrada de datas
         //pegar valor de tipo do carro 
 
@@ -113,26 +113,41 @@ public class Locacao {
         dataLoc = "12/05/2019";
         dataDev = "20/06/2019";
 
+        verificarMotorista(cliente, automovel);
+            
+        if(!verificaInadinplencia(cliente))
+            return false; 
+        setQuilometragemLocacao(automovel.getQuilometragem());
+        return true; 
+    }
+
+    public static boolean verificaInadinplencia(Cliente cliente) {
+        if (cliente.getInadimplente()) {
+            System.out.println("o cliente não pode realizar novas locações inadimplente");
+            return false; 
+        }
+        return true; 
+    }
+
+    public static void verificarMotorista(Cliente cliente, Automovel automovel) {
         if (cliente.getUltimoMotorista() != null) {
             Motorista m = cliente.getUltimoMotorista();
-            if ((verificarHabilitacao(automovel.getTipo() + "", m.getHabilitacao()))) {
-               System.out.print("Habilitação inválida, procure outro motorista");
+            if (!(verificarHabilitacao(automovel.getTipo() + "", m.getHabilitacao()))) {
+                System.out.print("Habilitação inválida, procure outro motorista");
                //listar todos os motoristas e pegar o de maior tempo 
-               //Motorista.listarTodos();
-            } 
-        }
-        else {
-                System.out.print("Sem ultimo motorista");
                 //Motorista.listarTodos();
             }
-
+        } else {
+            System.out.print("Sem ultimo motorista");
+            //Motorista.listarTodos();
+        }
     }
 
     public static boolean verificarHabilitacao(String tipo, String habilitacao) {
 
         if (tipo.equalsIgnoreCase("UTILITARIO")) {
 
-            if (!(habilitacao.equalsIgnoreCase("C")) || !(habilitacao.equalsIgnoreCase("D"))) {
+            if ((!(habilitacao.equalsIgnoreCase("C"))) && (!(habilitacao.equalsIgnoreCase("D")))) {
 
                 return false;
             }

@@ -28,12 +28,12 @@ public class MainTeste {
         
         Cliente cliente = new Cliente("João", "12345678910", false, false, motorista);
         
-        Automovel a1 = new Automovel("123ABC", true, TipoAutomovel.LUXO);
+        Automovel a1 = new Automovel("123ABC", true, TipoAutomovel.UTILITARIO);
         
         
         Locacao loc = new Locacao(dataLoc,dataDev , 120.0, cliente, motorista, a1, true);
         
-        
+        loc.realizarLocacao(cliente, a1);
         System.out.println(loc.calcularData());
         //System.out.println(a1.getTipo().getAliquota());
                        

@@ -16,6 +16,8 @@ public class Automovel extends AutomovelDAO {
     private boolean disponibilidade;
     @Column
     private TipoAutomovel tipo;
+    @Column 
+    private Double quilometragem; 
 
     public Automovel(String placa, boolean disponibilidade, TipoAutomovel tipo) {
         this.placa = placa;
@@ -25,6 +27,15 @@ public class Automovel extends AutomovelDAO {
 
     public Automovel(){}
 
+    public Double getQuilometragem() {
+        return quilometragem;
+    }
+
+    public void setQuilometragem(Double quilometragem) {
+        this.quilometragem = quilometragem;
+    }
+
+    
     public TipoAutomovel getTipo() {
         return tipo;
     }
