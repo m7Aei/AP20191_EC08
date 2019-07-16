@@ -5,12 +5,13 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class Locacao {
+    
     private Date dataLocacao;
     private Date dataDevolucao;
     private double quilometragemLocacao = 0;
     private double quilometragemDevolucao;
     private String cpfCliente;
-    private String nomeMotorista;
+    private String matriculaMotorista;
     private String placa;
     private boolean status;
     
