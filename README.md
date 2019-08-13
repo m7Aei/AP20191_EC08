@@ -39,7 +39,8 @@ conforme os requisitos descritos a seguir:
 </h2>
 
 <h3 align="center">
-  <img src="https://heartdevs.com/wp-content/uploads/2018/12/logo.png" width="215"><br>
+  ![He4rt](https://user-images.githubusercontent.com/44484286/62907612-70d8d980-bd4a-11e9-98c5-4fc5350b4935.png)
+<br>
     Visite nosso discord, vamo codar junto!! :godmode:
 	<a href="https://discord.io/He4rt" target="_blank">
 	<img src="https://discordapp.com/api/guilds/452926217558163456/embed.png" alt="Discord server"/></a><br>
