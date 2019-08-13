@@ -39,8 +39,7 @@ conforme os requisitos descritos a seguir:
 </h2>
 
 <h3 align="center">
-  ![He4rt](https://user-images.githubusercontent.com/44484286/62907612-70d8d980-bd4a-11e9-98c5-4fc5350b4935.png)
-<br>
+  <img src="https://www.google.com.br/search?q=he4rt+developers&hl=pt-BR&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiHwuHgz_7jAhVsH7kGHSEKDG8Q_AUIEygD&biw=1326&bih=665#imgrc=LNDh76HGlN_5JM:" width="215"><br>
     Visite nosso discord, vamo codar junto!! :godmode:
 	<a href="https://discord.io/He4rt" target="_blank">
 	<img src="https://discordapp.com/api/guilds/452926217558163456/embed.png" alt="Discord server"/></a><br>
