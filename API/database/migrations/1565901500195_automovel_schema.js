@@ -8,6 +8,11 @@ class AutomovelSchema extends Schema {
     this.create('automovels', table => {
       table.increments()
       table
+        .integer('motorista_id')
+        .unsigned()
+        .references('id')
+        .inTable('motoristas')
+      table
         .string('placa', 7)
         .notNullable()
         .unique()

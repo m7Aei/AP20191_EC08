@@ -7,6 +7,21 @@ class LocacaoSchema extends Schema {
   up () {
     this.create('locacaos', table => {
       table.increments()
+      table
+        .integer('user_id')
+        .unsigned()
+        .references('id')
+        .inTable('users')
+      table
+        .integer('motorista_id')
+        .unsigned()
+        .references('id')
+        .inTable('motoristas')
+      table
+        .integer('automovel_id')
+        .unsigned()
+        .references('automovels')
+        .inTable('motoristas')
       table.date('dataLocacao').notNullable()
       table.date('dataDevolucao').notNullable()
       table.float('kmLocacao', [2]).notNullable()

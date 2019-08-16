@@ -7,6 +7,11 @@ class MotoristaSchema extends Schema {
   up () {
     this.create('motoristas', table => {
       table.increments()
+      table
+        .integer('automovel_id')
+        .unsigned()
+        .references('id')
+        .inTable('automovels')
       table.string('nome', 255).notNullable()
       table
         .string('matricula', 255)
