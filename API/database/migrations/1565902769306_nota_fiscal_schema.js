@@ -14,10 +14,10 @@ class NotaFiscalSchema extends Schema {
         .references('id')
         .inTable('users')
       table
-        .integer('automovel_id')
+        .integer('automovels_id')
         .unsigned()
         .references('id')
-        .inTable('motoristas')
+        .inTable('automovels')
       table.timestamps()
     })
   }

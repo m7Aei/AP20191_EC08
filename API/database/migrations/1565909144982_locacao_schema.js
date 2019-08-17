@@ -18,10 +18,10 @@ class LocacaoSchema extends Schema {
         .references('id')
         .inTable('motoristas')
       table
-        .integer('automovel_id')
+        .integer('automovels_id')
         .unsigned()
-        .references('automovels')
-        .inTable('motoristas')
+        .references('id')
+        .inTable('automovels')
       table.date('dataLocacao').notNullable()
       table.date('dataDevolucao').notNullable()
       table.float('kmLocacao', [2]).notNullable()
